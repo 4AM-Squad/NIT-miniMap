@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+
+<head>
+    <title>Complex Marker Icons</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+    <div class='StudentCompo'>
+        <div class="mapcontainer">
+            <div id="map"></div>
+        </div>
+        <div class="menu-bar">
+            <h1 class="logo">NIT<span>miniMap.</span></h1>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/landing/student/student.html">Explore</a></li>
+                <li><a href="#">To-do</a></li>
+                <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
+
+                    <div class="dropdown-menu">
+                        <ul id="loclist">
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Contact us</a>
+                </li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="student.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
+        defer>
+    </script>
+</body>
+
+</html>

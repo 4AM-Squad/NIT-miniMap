@@ -2,7 +2,6 @@ let teacher = document.getElementById('teacher');
 let student = document.getElementById('student');
 let visitor = document.getElementById('visitor');
 let club = document.getElementById('club');
-let body = document.getElementById('body');
 
 window.addEventListener('load', () => {
     if(localStorage.role){
@@ -33,4 +32,3 @@ club.addEventListener('click', () => {
     localStorage.setItem('role', 'club');
     window.location.href = 'club/club.html';
 });
-

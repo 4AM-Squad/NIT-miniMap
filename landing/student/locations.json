@@ -19,7 +19,7 @@
             "image": null
         },
         {
-            "name": "H-4 Girivar Bhawan",
+            "name": "H-4 Dronacharya Bhawan",
             "latitude": 29.9477354671256, 
             "longitude": 76.81981778209051,
             "image": null
@@ -43,7 +43,7 @@
             "image": null
         },
         {
-            "name": "H-8 Indivar Bhawan",
+            "name": "H-8 Harihar Bhawan",
             "latitude": 29.941934,
             "longitude": 76.818982,
             "image": null
@@ -145,9 +145,117 @@
             "image": null
         },
         {
+            "name": "L-1",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-2",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-3",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-4",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-5",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-6",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
             "name": "Electronics & Communication Department",
-            "latitude": 29.947985143600366,
-            "longitude": 76.8153721332535, 
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "Lab-1",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-2",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-3",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-4",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-5",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-6",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-7",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-8",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-9",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-10",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-11",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-12",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
             "image": null
         },
         {

@@ -5,7 +5,6 @@
  */
 let locations;
 let loclist = document.getElementById('loclist');
-console.log(loclist.childNodes);
 
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
@@ -83,6 +82,3 @@ function onClickHandler(element){
 		window.location.href = 'directions/directions.html'
 	});
 }
-
-// window.initMap = initMap;
-

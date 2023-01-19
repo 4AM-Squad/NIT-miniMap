@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+
+<body>
+	<img src="logo.png" class="logo">
+	<video autoplay="autoplay" loop muted id="bgvid">
+		<source src="untitled.mov" type="video/mp4">
+	</video>
+
+	<div class="center">
+
+		<h1>Register</h1>
+		<form id="login" method="post" >
+			<div class="txt_field">
+				<input type="text" id="name" style="color: aliceblue;" required>
+				<span></span>
+				<label>Name</label>
+			</div>
+			
+			<div class="txt_field">
+				<input id="Roll" type="text" style="color: aliceblue;" required>
+				<span></span>
+				<label>Roll No.</label>
+			</div>
+		
+			<div style="display: flex; justify-content:space-around;">
+				<select id="branch_select" style="
+					background-color: #f9f9f9;
+					min-width: 160px;
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  		padding: 12px 16px;
+			  	">
+					<option value="">Branch</option>
+					<option value="CS">CS</option>
+					<option value="IT">IT</option>
+					<option value="EE">EE</option>
+					<option value="ECE">ECE</option>
+					<option value="MEC">MEC</option>
+					<option value="PIE">PIE</option>
+					<option value="CE">CE</option>
+				</select>
+
+				<select id="sub_select" style="
+					background-color: #f9f9f9;
+					min-width: 160px;
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+					padding: 12px 16px;
+				">
+					<option value="">SUB-SECTION</option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+			</div>
+
+			<div class="txt_field">
+				<input type="password" id="pass" style="color:aliceblue" required>
+				<span></span>
+				<label>Password</label>
+			</div>
+
+			<!-- <div class="txt_field">
+				<input type="password" style="color:aliceblue" required>
+				<span></span>
+				<label>Confirm Password</label>
+			</div> -->
+			<!-- <div class="pass">Forgot Password?</div> -->
+			<!-- <input type="submit" value="Login"> -->
+			<!-- HTML !-->
+			<div class="btncls">
+<button id="signUp" class="button-71" role="button">Button</button>
+</div>
+			
+			<!-- <div class="signup_link"> -->
+				<!-- Not a member? <a href="#">Signup</a> -->
+			<!-- </div> -->
+		</form>
+	</div>
+
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+		//import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		  apiKey: "AIzaSyAFVePIVi82ZoIcPBA7FstcTFTyzVH4Zjc",
+		  authDomain: "minimap-9a0ff.firebaseapp.com",
+		  databaseURL: "https://minimap-9a0ff-default-rtdb.firebaseio.com",
+		  projectId: "minimap-9a0ff",
+		  storageBucket: "minimap-9a0ff.appspot.com",
+		  messagingSenderId: "415178231023",
+		  appId: "1:415178231023:web:1fc83c03ed7a7430579f1a",
+		  measurementId: "G-0LX8D9QY03"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		//const analytics = getAnalytics(app);
+		
+		import { getDatabase , set , get , update , child , ref , remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+	
+		const db=getDatabase();
+	
+		// References
+		var namebox =document.getElementById("name");
+		var rollbox=document.getElementById("Roll");
+		var passbox=document.getElementById("pass");
+		var branchbox=document.getElementById("branch_select");
+		var subbox=document.getElementById("sub_select");
+	
+		var insertbtn=document.getElementById("signUp");
+	
+		//functions
+		function InsertData()
+		{
+			set(ref(db,"roll_no/"+rollbox.value),{
+			  Name: namebox.value,
+			  Branch : branchbox.value,
+			  Subsection : subbox.value,
+			  Password:passbox.value
+			})
+			.then(()=>{
+				window.location.href = '../student/student.html';
+			//window.location.href = 'https://www.youtube.com/';
+
+			})
+			.catch((error)=>{
+			  alert("Unsucessfullly");
+	
+			});
+		}
+	
+		function RetrieveData(){
+			
+			const dbref = ref(db);
+	  
+			get(child(dbref , "roll_no/"+ rollbox.value)).then((snapshot)=>{
+	  
+			  if( snapshot.exists()){
+				  console.log(snapshot.val());//ye object aara hai baaaaaki dekh lioooo 
+			  }
+			  else{
+				alert("No data found");
+			  }
+			})
+			.catch((error)=>{
+			  alert("unsuccessful" + error);
+			});
+		  }
+	
+	
+		//assign events 
+		// insertbtn.addEventListener('click',InsertData);
+		insertbtn.addEventListener('click' , (event)=>{
+			event.preventDefault();
+			InsertData();
+			
+		});
+		insertbtn.addEventListener('click' , RetrieveData);
+		
+		</script>
+		<!-- <script src="abc.js"></script> -->
+
+</body>
+
+</html>

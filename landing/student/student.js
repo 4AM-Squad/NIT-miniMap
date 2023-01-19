@@ -1,10 +1,7 @@
-/**
- * @license
- * Copyright 2019 Google LLC. All Rights Reserved.
- * SPDX-License-Identifier: Apache-2.0
- */
+
 let locations;
 let loclist = document.getElementById('loclist');
+console.log(loclist.childNodes);
 
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
@@ -30,7 +27,7 @@ function initMap() {
 		type: "poly",
 	};
 
-	fetch('locations.json')
+	fetch('./locations.json')
 	.then(response => response.json())
 	.then(data => {
 		data.places.forEach(element => {
@@ -73,7 +70,7 @@ function onClickHandler(element){
 	let str = element.innerHTML;
 	let obj;
 
-	fetch('locations.json')
+	fetch('./locations.json')
 	.then(response => response.json())
 	.then(data => {
 		obj = data.places.find(el => el.name == str);
@@ -82,3 +79,5 @@ function onClickHandler(element){
 		window.location.href = 'directions/directions.html'
 	});
 }
+
+// window.initMap = initMap;

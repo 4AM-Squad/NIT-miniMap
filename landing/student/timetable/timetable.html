@@ -24,11 +24,11 @@
             <div id="map"></div>
         </div>
         <div class="menu-bar">
-            <h1 class="logo">NIT<span>miniMap.</span></h1>
+            <a href="http://127.0.0.1:5500/landing/student/student.html"><h1 class="logo">NIT<span>miniMap.</span></h1></a>
             <ul>
                 <li><a href="http://127.0.0.1:5500/landing/student/student.html">Explore</a></li>
                 <li><a href="http://127.0.0.1:5500/landing/student/timetable/timetable.html">Time-Table</a></li>
-                <li><a href="#">To-do</a></li>
+                <li><a class="button" href="#divOne">To-do</a></li>
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
                     <div class="dropdown-menu">
@@ -36,13 +36,53 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Contact us</a>
+                <li>
+                    <a href="#">Contact us<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu1">
+                        <a href="https://www.instagram.com/palak_310_/" target="_blank"><h3>PALAK</h3></a>
+                        <a href="https://www.instagram.com/garvitmukhija_08/" target="_blank"><h3>GARVIT</h3></a>
+                        <a href="https://www.instagram.com/realvanshsukhija/" target="_blank"><h3>VANSH</h3></a>
+                        <a href="https://www.instagram.com/tushar._.2908/" target="_blank"><h3>TUSHAR</h3></a>
+                    </div>
                 </li>
-                <li><a href="#">Login</a></li>
-            </ul>
+        <li><a class="login" href="http://127.0.0.1:5500/landing/student/login%20page/login.html">Login</a></li>
+        </ul>
         </div>
     </div>
+    <div class="overlay" id="divOne">
+        <div id="inpContainer">
+            <input type="text" id="inpTask" placeholder="Enter your task here..."><br><br>
 
+            <div class='Alert'>
+                <div class='alertContaner'>
+                    <input id="alarmTime" type="datetime-local">
+                    <button id="alarmButton" onclick="setAlarm(this);">Set Alarm</button>
+
+                    <div id="alarmOptions" style="display: none;">
+                        <button onclick="snooze();">Snooze 5 minutes</button>
+                        <button onclick="stopAlarm();">Stop Alarm</button>
+                    </div>
+
+                </div>
+            </div><br>
+
+            <button id="updatebtn" onclick="update()">Update Task</button>
+            <button id="addbtn" onclick="addtask()">Add Task</button>
+            <button id="clrbtn" onclick="cleartask()">Clear All Tasks</button>
+        </div>
+
+        <div id="emp">
+            <div id="empty">
+                <i class="fa-solid fa-square-check"></i>
+                <span>You have done all your tasks</span><br>
+            </div>
+        </div>
+        <div id="taskContainer"></div>
+
+        <div id="msg">Task Added</div>
+        <script src="https://kit.fontawesome.com/dd13ebace7.js" crossorigin="anonymous"></script>
+    </div>
+    <script src="todo.js"></script>
     <script src="timetable.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"

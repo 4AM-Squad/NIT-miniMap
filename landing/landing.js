@@ -2,6 +2,7 @@ let teacher = document.getElementById('teacher');
 let student = document.getElementById('student');
 let visitor = document.getElementById('visitor');
 let club = document.getElementById('club');
+let body = document.getElementById('body');
 
 window.addEventListener('load', () => {
     if(localStorage.role){
@@ -18,7 +19,7 @@ teacher.addEventListener('click', () => {
 student.addEventListener('click', () => {
     localStorage.removeItem('role');
     localStorage.setItem('role', 'student');
-    window.location.href = 'student/student.html';
+    window.location.href = 'Register page/register.html';
 });
 
 visitor.addEventListener('click', () => {

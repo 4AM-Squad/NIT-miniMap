@@ -1,7 +1,7 @@
 
 // let watchID = navigator.geolocation.watchPosition(handleGetCurrentPosition, handleGetCurrentPositionError, {enableHighAccuracy:true, maximumAge: 0, timeout: 5000});
 
-let latt = 29.94798919310724, lngg = 76.81531926262228;
+let latt = 29.947361099242336, lngg = 76.81541884021446;
 
 // window.onload(navigator.geolocation.watchPosition(
 //     function (position) {
@@ -38,8 +38,6 @@ function initMap() {
 		center: { lat: 29.946076, lng: 76.817682 },
 		mapTypeId: 'satellite'
 	});
-
-	map.setOptions({minZoom: 15});
 
     fetch('../locations.json')
 	.then(response => response.json())

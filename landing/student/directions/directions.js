@@ -1,7 +1,7 @@
 
 // let watchID = navigator.geolocation.watchPosition(handleGetCurrentPosition, handleGetCurrentPositionError, {enableHighAccuracy:true, maximumAge: 0, timeout: 5000});
 
-let latt = 29.947361099242336, lngg = 76.81541884021446;
+let latt = 29.94798919310724, lngg = 76.81531926262228;
 
 // window.onload(navigator.geolocation.watchPosition(
 //     function (position) {

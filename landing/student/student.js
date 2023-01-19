@@ -80,4 +80,18 @@ function onClickHandler(element){
 	});
 }
 
-// window.initMap = initMap;
+let username = document.getElementById('username');
+let userrollno = document.getElementById('userrollno');
+let logout = document.getElementById('logout');
+
+console.log(JSON.parse(localStorage.user));
+
+let us = JSON.parse(localStorage.user);
+
+username.innerHTML = us.Name;
+userrollno.innerHTML = us.RollNo;
+
+logout.addEventListener('click', () => {
+	localStorage.clear();
+	window.location.href = '../landing.html';
+});

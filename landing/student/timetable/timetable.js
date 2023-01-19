@@ -208,17 +208,21 @@ function onClickHandler(element) {
         });
 }
 
-// const obj = {
-//     "name": "Vansh Sukhija",
-//     "rollno": 12112021,
-//     "branch": "CS",
-//     "section": "A",
-//     "subsection": 2,
-//     "password": "flana flana"
-// };
+let username = document.getElementById('username');
+let userrollno = document.getElementById('userrollno');
+let logout = document.getElementById('logout');
 
-// localStorage.setItem('user', JSON.stringify(obj));
+console.log(JSON.parse(localStorage.user));
 
+let us = JSON.parse(localStorage.user);
+
+username.innerHTML = us.Name;
+userrollno.innerHTML = us.RollNo;
+
+logout.addEventListener('click', () => {
+	localStorage.clear();
+	window.location.href = '../../landing.html';
+});
 
 // NOTIFICATION NHI AA RHA :(
 

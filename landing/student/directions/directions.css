@@ -273,12 +273,12 @@ body {
 
 .dropdown-menu1 {
 	display: none;
-	height: 20vh;
-
+	height: 30vh;
 }
-.dropdown-menu1 h3
+.dropdown-menu1 h4
 {
-	padding: 10px;
+	width: 190px;
+	padding: 10px 40px;
 }
 .menu-bar ul li:hover .dropdown-menu1 {
 	display: block;
@@ -618,4 +618,30 @@ body {
 	left: 150px;
 	top: 0;
 	background-color: var(--color-black);
+}
+
+.useridblock{
+	width: 15%;
+	height: 100%;
+	color: white;
+	display: flex;
+	text-align: right;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.userdetails{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+.useridblock img{
+	height: 90%;
+}
+
+#logout{
+	color: #0073ff;
+	cursor: pointer;
 }

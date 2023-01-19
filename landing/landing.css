@@ -3,17 +3,18 @@
 }
 
 .center {
-	position: absolute;
+	/* position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	/* background: white; */
 	border-radius: 5px;
 	/* box-shadow: 10px 10px 15px rgba(0,0,0,0.05); */
 	/* border-radius: 1000px; */
 	/* background-color: green; */
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-evenly;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -21,6 +22,7 @@
 	backdrop-filter: blur(5px);
 	/* box-shadow: 100px; */
 	filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
+	width: 40%;
 }
 
 .screen {
@@ -55,16 +57,16 @@ video {
 
 }
 
-.center h1 {
+.center h2 {
 	text-align: center;
-	padding: 20px 0;
+	/* padding: 20px 0; */
 	/* border-bottom: 1px solid silver; */
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	letter-spacing: 3px;
 }
 
 .intro {
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	/* background-color: transparent; */
 	width: 100%;
 	display: flex;
@@ -72,10 +74,7 @@ video {
 	align-items: center;
 	flex-direction: column;
 	color: white;
-}
-
-h3 {
-	margin: 0.75rem;
+	padding: 1rem 0;
 }
 
 #nitMM-text {
@@ -89,34 +88,22 @@ h3 {
 	width: fit-content;
 }
 
-.teacher,
-.student,
-.visitor,
-.club {
-	width: 100px;
-	height: 50px;
-	margin: 10px;
-	border: 0px none;
-	border-radius: 15px;
-	cursor: pointer;
-	font-size: 1.5rem;
-	border-image-outset: 1ch;
-}
-
 .multi-button {
+	width: 90%;
 	filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	background-color: transparent;
 }
 
 .multi-button button {
-	height: 125px;
+	height: 80px;
 	width: 200px;
 	background: linear-gradient(to bottom, #92cc2f, #3b3b3b);
 	font-weight: bold;
 	color: white;
-	font-size: 1.9rem;
+	font-size: 1.3rem;
 	border: none;
 	margin: 4px;
 	padding: 0;
@@ -163,5 +150,5 @@ button:active {
 	}
 }
 .logo{
-	width: 800px;
+	width: 90%;
 }

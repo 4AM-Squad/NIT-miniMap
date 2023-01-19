@@ -15,6 +15,8 @@ table = table[0];
 let today = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[today.getDay()];
+const user = JSON.parse(localStorage.getItem('user'));
+console.log(user);
 
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -55,81 +57,81 @@ function initMap() {
         .then(data => {
             let arr;
             if (day == 'Monday') {
-                if (user.branch == 'CS') {
-                    if (user.section == 'A' && user.subsection == 1) {
+                if (user.Branch == 'CS') {
+                    if (user.Subsection == '01') {
                         arr = data.Monday[0].CS[0].A1;
                     }
-                    if (user.section == 'A' && user.subsection == 2) {
+                    if (user.Subsection == '02') {
                         arr = data.Monday[0].CS[0].A2;
                     }
-                    if (user.section == 'A' && user.subsection == 3) {
+                    if (user.Subsection == '03') {
                         arr = data.Monday[0].CS[0].A3;
                     }
-                    if (user.section == 'A' && user.subsection == 4) {
+                    if (user.Subsection == '04') {
                         arr = data.Monday[0].CS[0].A4;
                     }
                 }
             }
             if (day == 'Tuesday') {
-                if (user.branch == 'CS') {
-                    if (user.section == 'A' && user.subsection == 1) {
+                if (user.Branch == 'CS') {
+                    if (user.Subsection == '01') {
                         arr = data.Tuesday[0].CS[0].A1;
                     }
-                    if (user.section == 'A' && user.subsection == 2) {
+                    if (user.Subsection == '02') {
                         arr = data.Tuesday[0].CS[0].A2;
                     }
-                    if (user.section == 'A' && user.subsection == 3) {
+                    if (user.Subsection == '03') {
                         arr = data.Tuesday[0].CS[0].A3;
                     }
-                    if (user.section == 'A' && user.subsection == 4) {
+                    if (user.Subsection == '04') {
                         arr = data.Tuesday[0].CS[0].A4;
                     }
                 }
             }
             if (day == 'Wednesday') {
-                if (user.branch == 'CS') {
-                    if (user.section == 'A' && user.subsection == 1) {
+                if (user.Branch == 'CS') {
+                    if (user.Subsection == '01') {
                         arr = data.Wednesday[0].CS[0].A1;
                     }
-                    if (user.section == 'A' && user.subsection == 2) {
+                    if (user.Subsection == '02') {
                         arr = data.Wednesday[0].CS[0].A2;
                     }
-                    if (user.section == 'A' && user.subsection == 3) {
+                    if (user.Subsection == '03') {
                         arr = data.Wednesday[0].CS[0].A3;
                     }
-                    if (user.section == 'A' && user.subsection == 4) {
+                    if (user.Subsection == '04') {
                         arr = data.Wednesday[0].CS[0].A4;
                     }
                 }
             }
             if (day == 'Thursday') {
-                if (user.branch == 'CS') {
-                    if (user.section == 'A' && user.subsection == 1) {
+                if (user.Branch == 'CS') {
+                    if (user.Subsection == '01') {
                         arr = data.Thursday[0].CS[0].A1;
                     }
-                    if (user.section == 'A' && user.subsection == 2) {
+                    if (user.Subsection == '02') {
                         arr = data.Thursday[0].CS[0].A2;
                     }
-                    if (user.section == 'A' && user.subsection == 3) {
+                    if (user.Subsection == '03') {
                         arr = data.Thursday[0].CS[0].A3;
                     }
-                    if (user.section == 'A' && user.subsection == 4) {
+                    if (user.Subsection == '04') {
                         arr = data.Thursday[0].CS[0].A4;
                     }
                 }
             }
             if (day == 'Friday') {
-                if (user.branch == 'CS') {
-                    if (user.section == 'A' && user.subsection == 1) {
+                if (user.Branch == 'CS') {
+                    if (user.Subsection == '01') {
                         arr = data.Friday[0].CS[0].A1;
                     }
-                    if (user.section == 'A' && user.subsection == 2) {
+                    if (user.Subsection == '02') {
                         arr = data.Friday[0].CS[0].A2;
                     }
-                    if (user.section == 'A' && user.subsection == 3) {
+                    if (user.Subsection == '03') {
                         arr = data.Friday[0].CS[0].A3;
                     }
-                    if (user.section == 'A' && user.subsection == 4) {
+                    if (user.Subsection == '04') {
                         arr = data.Friday[0].CS[0].A4;
                     }
                 }
@@ -206,18 +208,17 @@ function onClickHandler(element) {
         });
 }
 
-const obj = {
-    "name": "Vansh Sukhija",
-    "rollno": 12112021,
-    "branch": "CS",
-    "section": "A",
-    "subsection": 2,
-    "password": "flana flana"
-};
+// const obj = {
+//     "name": "Vansh Sukhija",
+//     "rollno": 12112021,
+//     "branch": "CS",
+//     "section": "A",
+//     "subsection": 2,
+//     "password": "flana flana"
+// };
 
-localStorage.setItem('user', JSON.stringify(obj));
+// localStorage.setItem('user', JSON.stringify(obj));
 
-const user = JSON.parse(localStorage.getItem('user'));
 
 // NOTIFICATION NHI AA RHA :(
 

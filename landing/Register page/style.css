@@ -368,6 +368,7 @@ button:active {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-bottom:10px;
 }
 
 .button-71:before {
@@ -386,12 +387,13 @@ button:active {
 
 .button-71:hover {
   box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
-  transform: scale(1.05);
+  transform: scale(1.2);
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .button-71 {
-    padding: 16px 48px;
+    padding: 10px 60px;
   }
 }
 

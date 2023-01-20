@@ -76,7 +76,8 @@ function cleartask(){
     msganimate("There is no task to be cleared");
     else
     msganimate("Cleared all tasks");
-    localStorage.clear();
+    localStorage.removeItem('todos');
+    localStorage.removeItem('checked');
     todos = [];
     checked = [];
     empty.style.display = "block";

@@ -12,10 +12,10 @@ let checked = [];
 document.getElementById("inpContainer").childNodes[5].disabled = true;
 document.getElementById("inpContainer").childNodes[9].disabled = true;
 
-if (JSON.parse(localStorage.getItem("todos")).length) {
+if(JSON.parse(localStorage.getItem("todos")).length){
     document.getElementById("inpContainer").childNodes[9].disabled = false;
     empty.style.display = "none";
-    for (let i = 0; i < JSON.parse(localStorage.getItem("todos")).length; i++) {
+    for(let i=0; i<JSON.parse(localStorage.getItem("todos")).length; i++){
         todos.push(JSON.parse(localStorage.getItem("todos"))[i]);
         checked.push(JSON.parse(localStorage.getItem("checked"))[i]);
     }
@@ -27,28 +27,28 @@ if (JSON.parse(localStorage.getItem("todos")).length) {
         <i class="fa-regular fa-trash-can" onclick="deltask(this)"></i>
         </div>`;
     });
-    for (let i = 0; i < checked.length; i++) {
-        if (checked[i] == '1') {
+    for(let i=0; i<checked.length; i++){
+        if(checked[i]=='1'){
             checkbtn[i].checked = true;
             check(checkbtn[i]);
         }
     }
 }
 
-function showicons(index) {
+function showicons(index){
     index.childNodes[1].style.opacity = "100%";
     index.childNodes[5].style.opacity = "100%";
     index.childNodes[7].style.opacity = "100%";
 };
 
-function hideicons(index) {
+function hideicons(index){
     index.childNodes[1].style.opacity = "50%";
     index.childNodes[5].style.opacity = "50%";
     index.childNodes[7].style.opacity = "50%";
 };
 
-function addtask() {
-    if (inpTask.value) {
+function addtask(){
+    if(inpTask.value){
         document.getElementById("inpContainer").childNodes[9].disabled = false;
         empty.style.display = "none";
         taskContainer.innerHTML += `<div class="task" onmouseenter="showicons(this)" onmouseleave="hideicons(this)">
@@ -70,12 +70,12 @@ function addtask() {
         msganimate("Cannot enter an empty task");
 }
 
-function cleartask() {
+function cleartask(){
     document.getElementById("inpContainer").childNodes[9].disabled = true;
-    if (todos.length == 0)
-        msganimate("There is no task to be cleared");
+    if(todos.length==0)
+    msganimate("There is no task to be cleared");
     else
-        msganimate("Cleared all tasks");
+    msganimate("Cleared all tasks");
     localStorage.removeItem('todos');
     localStorage.removeItem('checked');
     todos = [];
@@ -84,14 +84,14 @@ function cleartask() {
     taskContainer.innerHTML = '';
 }
 
-function check(element) {
+function check(element){
     let index = todos.indexOf(element.parentNode.childNodes[3].innerHTML);
     console.log(element.checked);
-    if (element.checked) {
+    if(element.checked){
         checked[index] = 1;
         element.parentNode.childNodes[3].style.textDecoration = "line-through #00ADB5 3px";
     }
-    else {
+    else{
         checked[index] = 0;
         element.parentNode.childNodes[3].style.textDecoration = "none";
     }
@@ -99,7 +99,7 @@ function check(element) {
     localStorage.setItem("checked", JSON.stringify(checked));
 }
 
-function deltask(element) {
+function deltask(element){
     let desc = String(element.parentNode.childNodes[3].innerHTML);
     let index = todos.indexOf(desc);
     todos.splice(index, 1);
@@ -108,20 +108,20 @@ function deltask(element) {
     let list = element.parentNode.parentNode;
     list.removeChild(list.childNodes[index]);
     msganimate("Task Deleted");
-    if (todos.length == 0) {
+    if(todos.length==0){
         empty.style.display = "block";
         document.getElementById("inpContainer").childNodes[9].disabled = true;
     }
 }
 
-function msganimate(str) {
+function msganimate(str){
     let int = setInterval(opa, 20);
     msg.style.opacity = 1;
-    function opa() {
-        if (msg.style.opacity == 0) {
+    function opa(){
+        if(msg.style.opacity==0){
             clearInterval(int);
         }
-        else {
+        else{
             msg.style.opacity -= 0.01;
         }
     }
@@ -129,7 +129,7 @@ function msganimate(str) {
 }
 
 let prevtext;
-function updatetask(index) {
+function updatetask(index){
     document.getElementById("inpContainer").childNodes[5].disabled = false;
     inpTask.value = index.parentNode.childNodes[3].innerHTML;
     prevtext = inpTask.value;
@@ -138,10 +138,10 @@ function updatetask(index) {
     document.getElementById("inpContainer").childNodes[9].disabled = true;
 }
 
-function update() {
+function update(){
     let index = todos.indexOf(prevtext);
-    if (inpTask != '') {
-        taskContainer.childNodes[index].childNodes[3].innerHTML = inpTask.value;
+    if(inpTask!=''){
+        taskContainer.childNodes[index].childNodes[3].innerHTML = inpTask.value;    
         todos[todos.indexOf(prevtext)] = inpTask.value;
         localStorage.removeItem("todos");
         localStorage.setItem("todos", JSON.stringify(todos));
@@ -187,7 +187,7 @@ function cancelAlarm(button) {
     button.setAttribute('onclick', 'setAlarm(this);')
 };
 
-let alarmcnt = 0;
+let alarmcnt=0;
 
 function initAlarm() {
     alarmSound.play();
@@ -206,6 +206,6 @@ function stopAlarm() {
 function snooze() {
     stopAlarm();
     alarmTimer = setTimeout(initAlarm, 300000); // 5 * 60 * 1000 = 5 Minutes
-    if (alarmcnt == 3)
+    if(alarmcnt==3)
         stopAlarm();
 };

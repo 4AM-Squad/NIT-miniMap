@@ -1,0 +1,550 @@
+{
+    "places": [
+        {
+            "name": "H-1 Abhimanyu Bhawan",
+            "latitude": 29.944773,
+            "longitude": 76.820591,
+            "image": null
+        },
+        {
+            "name": "H-2 Bhishma Bhawan",
+            "latitude": 29.944841,
+            "longitude": 76.819314,
+            "image": null
+        },
+        {
+            "name": "H-3 Chakradhar Bhawan",
+            "latitude": 29.946281,
+            "longitude": 76.819559,
+            "image": null
+        },
+        {
+            "name": "H-4 Dronacharya Bhawan",
+            "latitude": 29.9477354671256, 
+            "longitude": 76.81981778209051,
+            "image": null
+        },
+        {
+            "name": "H-5 Eklavya Bhawan",
+            "latitude": 29.947454905186728, 
+            "longitude": 76.82099209436801,
+            "image": null
+        },
+        {
+            "name": "H-6 Fanibhushan Bhawan",
+            "latitude": 29.946179171016745,
+            "longitude": 76.82062084871897,
+            "image": null
+        },
+        {
+            "name": "H-7 Girivar Bhawan",
+            "latitude": 29.940957,
+            "longitude": 76.818510,
+            "image": null
+        },
+        {
+            "name": "H-8 Harihar Bhawan",
+            "latitude": 29.941934,
+            "longitude": 76.818982,
+            "image": null
+        },
+        {
+            "name": "H-9 Indivar Bhawan",
+            "latitude": 29.941113,
+            "longitude": 76.816760,
+            "image": null
+        },
+        {
+            "name": "H-10 Visvesvaraya Bhawan",
+            "latitude": 29.943209,
+            "longitude": 76.817420,
+            "image": null
+        },
+        {
+            "name": "H-11 Vivekanand Bhawan",
+            "latitude": 29.943407,
+            "longitude": 76.818884,
+            "image": null
+        },
+        {
+            "name": "Kalpana Chawla Girls Hostel",
+            "latitude": 29.9454287841387,
+            "longitude": 76.8132034696935,
+            "image": null
+        },
+        {
+            "name": "Kaveri Girls Hostel",
+            "latitude": 29.945209367623253,
+            "longitude": 76.81468159119603,
+            "image": null
+        },
+        {
+            "name": "Bhagirathi Girls Hostel",
+            "latitude": 29.94618093182809,
+            "longitude": 76.81477947606672,
+            "image": null
+        },
+        {
+            "name": "Alkananda Girls Hostel",
+            "latitude": 29.946361745550142,
+            "longitude": 76.81401508734726,
+            "image": null
+        },
+        {
+            "name": "E-101",
+            "latitude": 29.94701387007738,
+            "longitude": 76.8165489313921,
+            "image": null
+        },
+        {
+            "name": "E-102",
+            "latitude": 29.94701387007738,
+            "longitude": 76.8165489313921,
+            "image": null
+        },
+        {
+            "name": "E-201",
+            "latitude": 29.94701387007738,
+            "longitude": 76.8165489313921,
+            "image": null
+        },
+        {
+            "name": "E-202",
+            "latitude": 29.94701387007738,
+            "longitude": 76.8165489313921,
+            "image": null
+        },
+        {
+            "name": "Electrical Department",
+            "latitude": 29.94701387007738,
+            "longitude": 76.8165489313921,
+            "image": null
+        },
+        {
+            "name": "Mechanical Department",
+            "latitude": 29.946742,
+            "longitude": 76.816578,
+            "image": null
+        },
+        {
+            "name": "Civil Department",
+            "latitude": 29.946357,
+            "longitude": 76.816478,
+            "image": null
+        },
+        {
+            "name": "Applied Mechanics Department",
+            "latitude": 29.946057,
+            "longitude": 76.816478,
+            "image": null
+        },
+        {
+            "name": "CCN Department",
+            "latitude": 29.948246580281097,
+            "longitude":  76.81558833959224, 
+            "image": null
+        },
+        {
+            "name": "L-1",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-2",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-3",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-4",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-5",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "L-6",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "Electronics & Communication Department",
+            "latitude": 29.94798919310724,
+            "longitude": 76.81531926262228, 
+            "image": null
+        },
+        {
+            "name": "Lab-1",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-2",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-3",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-4",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-5",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-6",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-7",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-8",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-9",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-10",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-11",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Lab-12",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Computer Engineering Department",
+            "latitude": 29.947586729757838,
+            "longitude": 76.81497696898703,
+            "image": null
+        },
+        {
+            "name": "Chemistry Department",
+            "latitude": 29.947557638948577,
+            "longitude": 76.81723360997651,
+            "image": null
+        },
+        {
+            "name": "Physics Department",
+            "latitude": 29.94754530454225,
+            "longitude": 76.81671604394,
+            "image": null
+        },
+        {
+            "name": "LHC-101",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-102",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-103",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-104",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-105",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-201",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-202",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-203",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-204",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "LHC-205",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "Lecture Hall Complex",
+            "latitude": 29.944951634903305,
+            "longitude": 76.81673505032342,
+            "image": null
+        },
+        {
+            "name": "Girls Maggi Hotspot",
+            "latitude": 29.945788314678822,
+            "longitude": 76.81413398512161,
+            "image": null
+        },
+        {
+            "name": "Maggi Hotspot",
+            "latitude": 29.942957,
+            "longitude": 76.818170,
+            "image": null
+        },
+        {
+            "name": "Open Air Theatre",
+            "latitude": 29.946607, 
+            "longitude": 76.818105,
+            "image": null
+        },
+        {
+            "name": "Moxie's Grill Canteen",
+            "latitude": 29.946813,
+            "longitude": 76.818605,
+            "image": null
+        },
+        {
+            "name": "Amul Canteen",
+            "latitude": 29.946986,
+            "longitude": 76.818688,
+            "image": null
+        },
+        {
+            "name": "Aryan Boot House",
+            "latitude": 29.946787,
+            "longitude": 76.818855,
+            "image": null
+        },
+        {
+            "name": "Ladies Yoga Centre",
+            "latitude": 29.946901,
+            "longitude": 76.818306,
+            "image": null
+        },
+        {
+            "name": "Examination & Drawing Hall",
+            "latitude": 29.947142,
+            "longitude": 76.817838,
+            "image": null
+        },
+        {
+            "name": "Audio & Visual Aid Centre",
+            "latitude": 29.947001,
+            "longitude": 76.816805,
+            "image": null
+        },
+        {
+            "name": "AE Lawns",
+            "latitude": 29.947302,
+            "longitude": 76.816448,
+            "image": null
+        },
+        {
+            "name": "NIT Lake",
+            "latitude": 29.94256306782756,
+            "longitude": 76.81308011910737,
+            "image": null
+        },
+        {
+            "name": "SAE Workshop",
+            "latitude": 29.944788981675806,
+            "longitude": 76.81775910897557,
+            "image": null
+        },
+        {
+            "name": "Senate Hall",
+            "latitude": 29.94777955844762,
+            "longitude": 76.81817997547724,
+            "image": null
+        },
+        {
+            "name": "Main Building, NITKKR",
+            "latitude": 29.947675208056364,
+            "longitude": 76.81694794292119,
+            "image": null
+        },
+        {
+            "name": "Teacher's Block",
+            "latitude": 29.948462706580433,
+            "longitude": 76.81811759220678,
+            "image": null
+        },
+        {
+            "name": "NIT Market",
+            "latitude": 29.948462706580433,
+            "longitude": 76.81811759220678,
+            "image": null
+        },
+        {
+            "name": "NIT Fountain",
+            "latitude": 29.9476309723419,
+            "longitude": 76.8163120673688,
+            "image": null
+        },
+        {
+            "name": "Golden Jublee Administrative Building",
+            "latitude": 29.94882555263501,
+            "longitude": 76.81730329097478,
+            "image": null
+        },
+        {
+            "name": "Tennis Court",
+            "latitude": 29.94900836039669,
+            "longitude": 76.81682338982944,
+            "image": null
+        },
+        {
+            "name": "Volleyball Court",
+            "latitude": 29.948922154013495,
+            "longitude": 76.81539529947901,
+            "image": null
+        },
+        {
+            "name": "BasketBall Court",
+            "latitude": 29.949448334982975,
+            "longitude": 76.81542440373951, 
+            "image": null
+        },
+        {
+            "name": "NIT Sports Complex",
+            "latitude": 29.950068021776694,
+            "longitude": 76.81608546212868,
+            "image": null
+        },
+        {
+            "name": "NIT Health Center",
+            "latitude": 29.950269193798025,
+            "longitude": 76.81373964315304,
+            "image": null
+        },
+        {
+            "name": "NIT Guest House",
+            "latitude": 29.949570908384292,
+            "longitude": 76.81404582016353,
+            "image": null
+        },
+        {
+            "name": "NIT Chowk",
+            "latitude": 29.94870859673452,
+            "longitude": 76.81484498347784,
+            "image": null
+        },
+        {
+            "name": "Library",
+            "latitude": 29.947361099242336,
+            "longitude": 76.81541884021446,
+            "image": null
+        },
+        {
+            "name": "Jublee Hall",
+            "latitude": 29.946540006373663,
+            "longitude": 76.8154236609393,
+            "image": null
+        },
+        {
+            "name": "Siemens Center",
+            "latitude": 29.94531832829625,
+            "longitude": 76.81575552237008,
+            "image": null
+        },
+        {
+            "name": "NIT Main Gate",
+            "latitude": 29.947688150158935,
+            "longitude": 76.82235206077642,
+            "image": null
+        },
+        {
+            "name": "NIT Back Gate",
+            "latitude": 29.94120612542192,
+            "longitude": 76.81949313728902,
+            "image": null
+        },
+        {
+            "name": "NIT-KUK Gate",
+            "latitude": 29.951415656180185,
+            "longitude": 76.81532736781564,
+            "image": null
+        },
+        {
+            "name": "NIT Indoor Badminton Court",
+            "latitude": 29.95073244787944,
+            "longitude": 76.81921575974233,
+            "image": null
+        },
+        {
+            "name": "Swimming Pool",
+            "latitude": 29.950547171385036,
+            "longitude": 76.81848795848325,
+            "image": null
+        },
+        {
+            "name": "NIT Gym",
+            "latitude": 29.95009623308641,
+            "longitude": 76.81550469405352,
+            "image": null
+        }
+    ]
+}

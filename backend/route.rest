@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3000/timetable/63cd3f1c36726c244b861174
+DELETE  http://localhost:3000/timetable/63cecc5b89350bbaab7369b5
 
 ###
 

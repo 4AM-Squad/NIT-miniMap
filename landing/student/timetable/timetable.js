@@ -51,134 +51,47 @@ function initMap() {
             });
         });
 
-    fetch('./timetable.json')
+    infoWindow = new google.maps.InfoWindow({
+        content: ""
+    });
+
+    let subsec = user.Subsection;
+    subsec = Number(subsec);
+    let sec;
+    if(subsec <= 12)
+        sec = 'C';
+    if(subsec <= 8)
+    sec = 'B';
+    if(subsec <= 4)
+        sec = 'A';
+
+    fetch(`http://localhost:3000/timetable/${day}/${user.Branch}/${sec}/${subsec}`)
         .then(response => response.json())
         .then(data => {
-            let arr;
-            if (day == 'Monday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Monday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Monday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Monday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Monday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Tuesday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Tuesday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Tuesday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Tuesday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Tuesday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Wednesday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Wednesday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Wednesday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Wednesday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Wednesday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Thursday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Thursday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Thursday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Thursday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Thursday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Friday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Friday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Friday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Friday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Friday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Saturday') {
-                if (user.Branch == 'CS') {
-                    table.innerHTML += `
-                    <div id="data">
-                        <div class="details">
-                            <h2>No Class Today</h2>
-                        </div>
-                    </div>
-                `
-                }
-            }
-            if (day == 'Sunday') {
-                if (user.Branch == 'CS') {
-                    table.innerHTML += `
-                    <div id="data">
-                        <div class="details">
-                            <h2>No Class Today</h2>
-                        </div>
-                    </div>
-                `
-                }
-            }
-            arr.forEach(el => {
+            data.forEach(el => {
                 table.innerHTML += `
-                    <div id="data">
-                        <img src="./marker100.png" alt="marker">
-                        <div class="details">
-                            <h4 id="sub">${el.Subject}</h4>
-                            <h4 id="type">(${el.Type})</h4>
-                            <h4 id="loc">${el.Location}</h4>
-                            <h4 id="time">${el.Time}</h4>
-                        </div>
+                <div id="data">
+                    <img src="./marker100.png" alt="marker">
+                    <div class="details">
+                        <h4 id="sub">${el.subject}</h4>
+                        <h4 id="type">(${el.type})</h4>
+                        <h4 id="loc">${el.location}</h4>
+                        <h4 id="time">${el.start_time} - ${el.end_time}</h4>
                     </div>
-                `
+                </div>
+            `
             });
 
-            arr.forEach(el => {
-                let loc = el.Location;
+            data.forEach(el => {
+                let loc = el.location;
                 let element;
                 fetch('../locations.json')
                     .then(response => response.json())
-                    .then(data => {
-
-                        element = data.places.find(el => el.name == loc);
+                    .then(dt => {
+                        dt.places.forEach(i => {
+                            if(i.name == loc)
+                                element = i;
+                        })
 
                         const marker = new google.maps.Marker({
                             position: { lat: element.latitude, lng: element.longitude },
@@ -205,17 +118,8 @@ function initMap() {
                         });
                     });
             });
-        });
-
-
-    infoWindow = new google.maps.InfoWindow({
-        content: ""
-    });
-
-    // fetch('http://localhost:3000/timetable/CS/A/1')
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
 
 }
 
@@ -238,7 +142,7 @@ let username = document.getElementById('username');
 let userrollno = document.getElementById('userrollno');
 let logout = document.getElementById('logout');
 
-// console.log(JSON.parse(localStorage.user));
+console.log(JSON.parse(localStorage.user));
 
 let us = JSON.parse(localStorage.user);
 

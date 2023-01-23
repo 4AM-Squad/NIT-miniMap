@@ -30,7 +30,6 @@
 	font-size: 20px;
 	color: var(--color-white);
 	text-decoration: none;
-
 	transition: all 0.3s;
 }
 
@@ -55,8 +54,6 @@
 	width: 150px;
 	padding: 10px;
 }
-
-
 
 .menu-bar ul li:hover .dropdown-menu1 {
 	display: block;
@@ -177,12 +174,15 @@
 	height: 35px;
 	font-size: 22px;
 }
-
-html,
 body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	background: #e7e7e7;
+	height: 100vh;
+	background-color: #222831;
 }
 
 
@@ -199,13 +199,7 @@ body {
 	box-sizing: border-box;
 }
 
-body {
-	font-family: sans-serif;
-	font-family: 'Montserrat', sans-serif;
-	background: #e7e7e7;
-	height: 100vh;
-	background-color: #222831;
-}
+
 
 
 
@@ -274,10 +268,6 @@ input[type="submit"] {
 	font-size: 30px;
 	color: #EEEEEE;
 }
-
-
-
-
 
 #addbtn,
 #clrbtn,

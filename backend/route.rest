@@ -14,16 +14,16 @@ POST http://localhost:3000/timetable/
 Content-Type: application/json
 
 {
-    "subject": "Unix & Linux Programming", 
+    "subject": "Microprocessor And Interfacing", 
     "type": "Lecture",
-    "location": "L-3",
-    "day": "Wednesday",
-    "start_time": "11:35:00",
-    "end_time": "12:30:00",
-    "teacher": "Mahender Kumar Murmu",
+    "location": "L-6",
+    "day": "Monday",
+    "start_time": "16:30:00",
+    "end_time": "17:25:00",
+    "teacher": "Dr Mohit Dua",
     "branch": "CS",
-    "section": "C",
-    "subsection": 12
+    "section": "A",
+    "subsection": 4
 }
 
 ###

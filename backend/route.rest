@@ -1,0 +1,40 @@
+GET http://localhost:3000/timetable
+
+###
+
+GET http://localhost:3000/timetable/CS/B/5
+
+###
+
+GET http://localhost:3000/timetable/Monday
+
+###
+
+POST http://localhost:3000/timetable/
+Content-Type: application/json
+
+{
+    "subject": "Unix & Linux Programming", 
+    "type": "Lecture",
+    "location": "L-3",
+    "day": "Wednesday",
+    "start_time": "11:35:00",
+    "end_time": "12:30:00",
+    "teacher": "Mahender Kumar Murmu",
+    "branch": "CS",
+    "section": "C",
+    "subsection": 12
+}
+
+###
+
+DELETE  http://localhost:3000/timetable/63cd3f1c36726c244b861174
+
+###
+
+PATCH  http://localhost:3000/timetable/63cd3f1c36726c244b861174
+Content-Type: application/json
+
+{
+    "name" : "garvit"
+}

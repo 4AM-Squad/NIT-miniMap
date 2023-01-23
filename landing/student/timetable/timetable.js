@@ -16,7 +16,6 @@ let today = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[today.getDay()];
 const user = JSON.parse(localStorage.getItem('user'));
-console.log(user);
 
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -191,6 +190,12 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({
         content: ""
     });
+
+    // fetch('http://localhost:3000/timetable/CS/A/1')
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch(err => console.log(err));
+
 }
 
 
@@ -212,7 +217,7 @@ let username = document.getElementById('username');
 let userrollno = document.getElementById('userrollno');
 let logout = document.getElementById('logout');
 
-console.log(JSON.parse(localStorage.user));
+// console.log(JSON.parse(localStorage.user));
 
 let us = JSON.parse(localStorage.user);
 
@@ -220,8 +225,8 @@ username.innerHTML = us.Name;
 userrollno.innerHTML = us.RollNo;
 
 logout.addEventListener('click', () => {
-	localStorage.clear();
-	window.location.href = '../../landing.html';
+    localStorage.clear();
+    window.location.href = '../../landing.html';
 });
 
 // NOTIFICATION NHI AA RHA :(

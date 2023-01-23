@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="visitors.css">
+    <link rel="shortcut icon" href="marker.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class='StudentCompo'>
+        <div class="mapcontainer">
+            <div id="map"></div>
+        </div>
+        <div class="menu-bar">
+            <a href="http://127.0.0.1:5500/NIT-miniMap-main/landing/Visitor/visitor.html">
+                <h1 class="logo">NIT<span>miniMap.</span></h1>
+            </a>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/NIT-miniMap-main/landing/Visitor/visitor.html">Explore</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/NIT-miniMap-main/landing/Visitor/visitor.html">Virtual Tour</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/NIT-miniMap-main/landing/Visitor/visitor.html">Campus Life
+                </a>
+                </li>
+                <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
+
+                    <div class="dropdown-menu">
+                        <ul id="loclist">
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Contact us <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu1">
+                        <a href="https://www.instagram.com/palak_310_/" target="_blank">
+                            <h4><i class="fa-brands fa-instagram"></i> PALAK</h4>
+                        </a>
+                        <a href="https://www.instagram.com/garvitmukhija_08/" target="_blank">
+                            <h4><i class="fa-brands fa-instagram"></i> GARVIT</h4>
+                        </a>
+                        <a href="https://www.instagram.com/realvanshsukhija/" target="_blank">
+                            <h4><i class="fa-brands fa-instagram"></i> VANSH</h4>
+                        </a>
+                        <a href="https://www.instagram.com/tushar._.2908/" target="_blank">
+                            <h4><i class="fa-brands fa-instagram"></i> TUSHAR</h4>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="useridblock">
+                <div class="userdetails">
+                    <div id="logout">Logout</div>
+                </div>
+                <img src="./PFPW.png" alt="ProfilePicture">
+            </div>
+        </div>
+    </div>
+    <script src="visitors.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
+        defer>
+        </script>
+</body>
+
+</html>

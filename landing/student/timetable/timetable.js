@@ -135,7 +135,28 @@ function initMap() {
                     }
                 }
             }
-
+            if (day == 'Saturday') {
+                if (user.Branch == 'CS') {
+                    table.innerHTML += `
+                    <div id="data">
+                        <div class="details">
+                            <h2>No Class Today</h2>
+                        </div>
+                    </div>
+                `
+                }
+            }
+            if (day == 'Sunday') {
+                if (user.Branch == 'CS') {
+                    table.innerHTML += `
+                    <div id="data">
+                        <div class="details">
+                            <h2>No Class Today</h2>
+                        </div>
+                    </div>
+                `
+                }
+            }
             arr.forEach(el => {
                 table.innerHTML += `
                     <div id="data">

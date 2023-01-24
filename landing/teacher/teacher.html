@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>teacher</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="teacher.css">
+    <link rel="shortcut icon" href="marker.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class='StudentCompo'>
+        <div class="mapcontainer">
+            <div id="map"></div>
+        </div>
+        <div class="menu-bar">
+            <a href="./teacher.html">
+                <h1 class="logo">NIT<span>miniMap.</span></h1>
+            </a>
+            <ul>
+                <li><a href="./teacher.html">Explore</a>
+                </li>
+                <li><a href="./timetable/timetable.html">Time-Table<i class="fas fa-time"></i></a></li>
+                <li><a class="button" href="#divOne">Alter Classes<i class="fas fa-edit"></i></a></li>
+
+                <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
+
+                    <div class="dropdown-menu">
+                        <ul id="loclist">
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Contact us <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu1">
+                        <a href="https://www.instagram.com/palak_310_/" target="_blank">
+                            <h4><i class="fa fa-instagram"></i> PALAK</h4>
+                        </a>
+                        <a href="https://www.instagram.com/garvitmukhija_08/" target="_blank">
+                            <h4><i class="fa fa-instagram"></i> GARVIT</h4>
+                        </a>
+                        <a href="https://www.instagram.com/realvanshsukhija/" target="_blank">
+                            <h4><i class="fa fa-instagram"></i> VANSH</h4>
+                        </a>
+                        <a href="https://www.instagram.com/tushar._.2908/" target="_blank">
+                            <h4><i class="fa fa-instagram"></i> TUSHAR</h4>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="useridblock">
+                <div class="userdetails">
+                    <div id="username"></div>
+                    <div id="userrollno"></div>
+                    <div id="logout">Logout</div>
+                </div>
+                <img src="./PFPW.png" alt="ProfilePicture">
+            </div>
+        </div>
+        <div class="overlay" id="divOne">
+            
+        </div>
+    </div>
+    <script src="teacher.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
+        defer>
+        </script>
+</body>
+
+</html>

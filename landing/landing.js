@@ -31,5 +31,5 @@ visitor.addEventListener('click', () => {
 club.addEventListener('click', () => {
     localStorage.removeItem('role');
     localStorage.setItem('role', 'club');
-    window.location.href = 'club/club.html';
+    window.location.href = 'club/login page/login.html';
 });

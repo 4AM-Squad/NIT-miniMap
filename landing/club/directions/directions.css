@@ -306,11 +306,26 @@ body {
 }
 
 .overlay {
+	justify-content: center;
+	flex-direction: column;
 	position: fixed;
 	top: 10%;
 	bottom: 10%;
-	left: 10%;
-	right: 10%;
+	left: 20%;
+	right: 20%;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay1 {
+	justify-content: center;
+	flex-direction: column;
+	position: fixed;
+	top: 10%;
+	bottom: 10%;
+	left: 20%;
+	right: 20%;
 	background: rgba(0, 0, 0, 0.8);
 	transition: opacity 500ms;
 	visibility: hidden;
@@ -318,6 +333,10 @@ body {
 }
 
 .overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.overlay1:target {
 	visibility: visible;
 	opacity: 1;
 }
@@ -373,14 +392,14 @@ body{
     text-align: center;
 }
 
-#inpTask{
-    background-color: #EEEEEE;
-    padding: 5px;
-    border: 0;
-    border-radius: 3px;
-    width: 700px;
-    height: 35px;
-    font-size: 22px;
+#inpTask {
+	background-color: #EEEEEE;
+	padding: 5px;
+	border: 0;
+	border-radius: 3px;
+	width: 700px;
+	height: 35px;
+	font-size: 22px;
 }
 
 #addbtn, #clrbtn, #updatebtn{
@@ -621,4 +640,37 @@ body {
 #logout{
 	color: #0073ff;
 	cursor: pointer;
+}
+
+.overlay div {
+	/* top: -2%; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* flex-direction: column; */
+	text-align: center;
+}
+.overlay1 div {
+	/* top: -2%; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* flex-direction: column; */
+	text-align: center;
+}
+
+.list1 {
+	color: white;
+	height: 410px;
+	overflow-y: scroll;
+}
+
+.list {
+	color: white;
+	height: 470px;
+	overflow-y: scroll;
+}
+input.date {
+	border-radius: 10px;
+	height: auto;
+	transition: all ease 400ms;
+	box-shadow: 0px 0px 1px 1px Violet;
 }

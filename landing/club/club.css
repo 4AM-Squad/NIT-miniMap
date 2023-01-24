@@ -37,6 +37,7 @@ body {
 .logo span {
 	color: var(--color-primary);
 }
+
 .menu-bar ul {
 	list-style: none;
 	display: flex;
@@ -142,20 +143,72 @@ body {
 }
 
 .overlay {
+	justify-content: center;
+	flex-direction: column;
 	position: fixed;
 	top: 10%;
 	bottom: 10%;
-	left: 10%;
-	right: 10%;
+	left: 20%;
+	right: 20%;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay1 {
+	justify-content: center;
+	flex-direction: column;
+	position: fixed;
+	top: 10%;
+	bottom: 10%;
+	left: 20%;
+	right: 20%;
 	background: rgba(0, 0, 0, 0.8);
 	transition: opacity 500ms;
 	visibility: hidden;
 	opacity: 0;
 }
 
+.overlay div {
+	/* top: -2%; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* flex-direction: column; */
+	text-align: center;
+}
+.overlay1 div {
+	/* top: -2%; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* flex-direction: column; */
+	text-align: center;
+}
+.list1 {
+	color: white;
+	height: 410px;
+	overflow-y: scroll;
+}
+
+.list {
+	color: white;
+	height: 470px;
+	overflow-y: scroll;
+}
+
 .overlay:target {
 	visibility: visible;
 	opacity: 1;
+}
+.overlay1:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+input.date {
+	border-radius: 10px;
+	height: auto;
+	transition: all ease 400ms;
+	box-shadow: 0px 0px 1px 1px Violet;
 }
 
 form label {

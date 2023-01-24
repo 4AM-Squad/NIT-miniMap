@@ -17,9 +17,26 @@
 		<h1>Register</h1>
 		<form method="post">
 			<div class="txt_field">
-				<input type="text" style="color: aliceblue;" required>
-				<span></span>
-				<label>Roll No.</label>
+				<select id="branch_select" style="
+					background-color: #f9f9f9;
+					width: 100%;
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  		padding: 12px 16px;
+			  	">
+					<option value="">Clubs/Society</option>
+					<option value="Technobyte">Technobyte</option>
+					<option value="I&E-CELL">I&E-CELL</option>
+					<option value="MAD">MAD</option>
+					<option value="PhotoG">PhotoG</option>
+					<option value="SUC">SUC</option>
+					<option value="NBC">NBC</option>
+					<option value="SHIKSHA">SHIKSHA</option>
+					<option value="LSD">LSD</option>
+					<option value="SpicMacy">SpicMacy</option>
+					<option value="MECHSOCH">MECHSOCH</option>
+					<option value="ElectroBUZZ">ElectroBUZZ</option>
+				</select>
+
 			</div>
 			<div class="txt_field">
 				<input type="password" style="color:aliceblue" required>
@@ -27,9 +44,7 @@
 				<label>Password</label>
 			</div>
 			<input type="submit" value="Login">
-			<div class="signup_link">
-				Not a member? <a href="http://127.0.0.1:5500/landing/Register%20page/register.html">Signup</a>
-			</div>
+			<br><br>
 		</form>
 	</div>
 

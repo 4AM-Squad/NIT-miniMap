@@ -2,7 +2,7 @@ GET http://localhost:3000/timetable
 
 ###
 
-GET http://localhost:3000/timetable/CS/B/5
+GET http://localhost:3000/timetable/Tuesday/CS/A/3
 
 ###
 
@@ -14,13 +14,13 @@ POST http://localhost:3000/timetable/
 Content-Type: application/json
 
 {
-    "subject": "Microprocessor And Interfacing", 
+    "subject": "Data Mining And Data Warehousing", 
     "type": "Lecture",
-    "location": "L-6",
-    "day": "Monday",
-    "start_time": "16:30:00",
-    "end_time": "17:25:00",
-    "teacher": "Dr Mohit Dua",
+    "location": "L-3",
+    "day": "Thursday",
+    "start_time": "15:35:00",
+    "end_time": "16:30:00",
+    "teacher": "Dr Vikram Singh",
     "branch": "CS",
     "section": "A",
     "subsection": 4

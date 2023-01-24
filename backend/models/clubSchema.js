@@ -17,7 +17,10 @@ const clubSchema = new mongoose.Schema({
         type : [Date],
         default : []
     },
-    events : [mongoose.Schema.Types.Mixed]
+    events : {
+        type : [mongoose.Schema.Types.Mixed],
+        default : []
+    }
 })
 
 module.exports = mongoose.model('Club', clubSchema)

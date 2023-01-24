@@ -2,7 +2,7 @@ GET http://localhost:3000/timetable
 
 ###
 
-GET http://localhost:3000/timetable/CS/B/5
+GET http://localhost:3000/timetable/Tuesday/CS/A/1
 
 ###
 
@@ -14,10 +14,10 @@ POST http://localhost:3000/timetable/
 Content-Type: application/json
 
 {
-    "subject": "Microprocessor And Interfacing", 
+    "subject": "Microprocessor & Interfacing", 
     "type": "Lecture",
-    "location": "L-6",
-    "day": "Monday",
+    "location": "L-2",
+    "day": "Wednesday",
     "start_time": "16:30:00",
     "end_time": "17:25:00",
     "teacher": "Dr Mohit Dua",
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3000/timetable/63cecc5b89350bbaab7369b5
+DELETE  http://localhost:3000/timetable/63cf63ac604073bc496dd2a3
 
 ###
 
@@ -36,5 +36,22 @@ PATCH  http://localhost:3000/timetable/63cd3f1c36726c244b861174
 Content-Type: application/json
 
 {
-    "name" : "garvit"
+    "subject": "Microprocessor & Interfacing", 
+    "type": "Lecture",
+    "location": "L-2",
+    "day": "Wednesday",
+    "start_time": "16:30:00",
+    "end_time": "17:25:00",
+    "teacher": "Dr Mohit Dua",
+    "branch": "CS",
+    "section": "A",
+    "subsection": 4
 }
+
+### TEACHER'S ROUTES AHEAD
+
+GET http://localhost:3000/teacherdb
+
+### CLUB'S ROUTES AHEAD
+
+GET http://localhost:3000/clubdb

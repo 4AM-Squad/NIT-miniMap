@@ -16,4 +16,10 @@ app.use(express.json())
 const timetableRouter = require('./routes/timetable')
 app.use('/timetable', timetableRouter)
 
+const teacherRouter = require('./routes/teacher')
+app.use('/teacherdb', teacherRouter)
+
+const clubRouter = require('./routes/club')
+app.use('/clubdb', clubRouter)
+
 app.listen(3000, () => console.log('Server Started'));

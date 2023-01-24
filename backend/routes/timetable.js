@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // Getting one
 router.get('/:day/:branch/:section/:subsection', async (req, res) => {
     try{
-        const classes = await Timetable.find({section : req.params.section, subsection : req.params.subsection, day : req.params.day, branch : req.params.branch})
+        const classes = await Timetable.find({section : req.params.section, subsection : req.params.subsection, day : req.params.day, branch : req.params.branch}).sort({start_time : 1})
         res.send(classes)
     } catch (err){
         res.status(500).json({message : err.message})

@@ -1,0 +1,156 @@
+{
+    "Monday": [
+        {
+            "CS": [
+                {
+                    "A1": [
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Practical",
+                            "Location": "Lab-1",
+                            "Time": "8:30:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Practical",
+                            "Location": "Lab-1",
+                            "Time": "10:40:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Lecture",
+                            "Location": "L-1",
+                            "Time": "12:30:00"
+                        },
+                        {
+                            "Subject": "Programming using Python",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "14:40:00"
+                        },
+                        {
+                            "Subject": "Data Mining and Data Warehousing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "15:35:00"
+                        },
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "16:30:00"
+                        }
+                    ],
+                    "A2": [
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Practical",
+                            "Location": "Lab-1",
+                            "Time": "8:30:00"
+                        },
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Practical",
+                            "Location": "Lab-6",
+                            "Time": "10:40:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Lecture",
+                            "Location": "L-1",
+                            "Time": "12:30:00"
+                        },
+                        {
+                            "Subject": "Programming using Python",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "14:40:00"
+                        },
+                        {
+                            "Subject": "Data Mining and Data Warehousing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "15:35:00"
+                        },
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "16:30:00"
+                        }
+                    ],
+                    "A3": [
+                        {
+                            "Subject": "Programming using Python",
+                            "Type": "Practical",
+                            "Location": "Lab-3",
+                            "Time": "8:30:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Practical",
+                            "Location": "Lab-6",
+                            "Time": "10:40:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Lecture",
+                            "Location": "L-1",
+                            "Time": "12:30:00"
+                        },
+                        {
+                            "Subject": "Programming using Python",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "14:40:00"
+                        },
+                        {
+                            "Subject": "Data Mining and Data Warehousing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "15:35:00"
+                        },
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "16:30:00"
+                        }
+                    ],
+                    "A4": [
+                        {
+                            "Subject": "Computer Networks",
+                            "Type": "Practical",
+                            "Location": "Lab-10",
+                            "Time": "10:40:00"
+                        },
+                        {
+                            "Subject": "Operating System",
+                            "Type": "Lecture",
+                            "Location": "L-1",
+                            "Time": "12:30:00"
+                        },
+                        {
+                            "Subject": "Programming using Python",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "14:40:00"
+                        },
+                        {
+                            "Subject": "Data Mining and Data Warehousing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "15:35:00"
+                        },
+                        {
+                            "Subject": "Microprocessor and Interfacing",
+                            "Type": "Lecture",
+                            "Location": "L-6",
+                            "Time": "16:30:00"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

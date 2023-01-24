@@ -1,0 +1,650 @@
+.StudentCompo{
+	display: flex;
+	flex-direction: column;
+}
+
+.times{
+	background: linear-gradient(to bottom, white, #dafcfc);
+	width: 20%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	overflow-y: scroll;
+	height: 100%;
+	color: black;
+}
+
+.times h2{
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.table{
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	flex-direction: column;
+}
+
+#data{
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+.details{
+	text-align: right;
+	width: 80%;
+}
+
+.table img{
+	width: 60px;
+	position: relative;
+}
+
+#map {
+    height: 90vh;
+	width: 80%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mapcontainer {
+	width: 100%;
+	height: 90vh;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+}
+
+:root {
+	--color-primary: #0073ff;
+	--color-white: #e9e9e9;
+	--color-black: #141d28;
+	--color-black-1: #212b38;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.logo {
+	color: var(--color-white);
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.logo span {
+	color: var(--color-primary);
+}
+
+.menu-bar ul {
+	list-style: none;
+	display: flex;
+}
+
+.menu-bar ul li {
+	padding: 10px 30px;
+	position: relative;
+}
+
+.menu-bar ul li a {
+	font-size: 20px;
+	color: var(--color-white);
+	text-decoration: none;
+
+	transition: all 0.3s;
+}
+
+.menu-bar ul li a:hover {
+	color: var(--color-primary);
+}
+
+.fas {
+	float: right;
+	margin-left: 10px;
+	padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+	display: none;
+	overflow-y: scroll;
+	height: 50vh;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+	display: block;
+	margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+	width: 150px;
+	padding: 10px;
+}
+
+.dropdown-menu-1 {
+	display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+	display: block;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	background-color: var(--color-black);
+}
+
+#map {
+    height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mapcontainer {
+	width: 100vw;
+	height: 90vh;
+	position: fixed;
+	bottom: 0;
+}
+
+:root {
+	--color-primary: #0073ff;
+	--color-white: #e9e9e9;
+	--color-black: #141d28;
+	--color-black-1: #212b38;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.logo {
+	color: var(--color-white);
+	font-size: 30px;
+}
+
+.logo span {
+	color: var(--color-primary);
+}
+
+.menu-bar ul {
+	list-style: none;
+	display: flex;
+}
+
+.menu-bar ul li {
+	padding: 10px 30px;
+	position: relative;
+}
+
+.menu-bar ul li a {
+	font-size: 20px;
+	color: var(--color-white);
+	text-decoration: none;
+
+	transition: all 0.3s;
+}
+.login
+{
+	font-size: 1em;
+	padding: 15px 35px;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	background: #403e3d;
+	border-radius: 50px;
+}
+.menu-bar ul li a:hover {
+	color: var(--color-primary);
+}
+
+.fas {
+	float: right;
+	margin-left: 10px;
+	padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+	display: none;
+	overflow-y: scroll;
+	height: 50vh;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+	display: block;
+	margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+	width: 150px;
+	padding: 10px;
+}
+
+.dropdown-menu-1 {
+	display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+	display: block;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	background-color: var(--color-black);
+}
+
+.dropdown-menu1 {
+	display: none;
+	/* height: 30vh; */
+}
+.dropdown-menu1 h4
+{
+	width: 190px;
+	padding: 10px 40px;
+}
+.menu-bar ul li:hover .dropdown-menu1 {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu1 ul {
+	display: block;
+	margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu1 ul li {
+	width: 150px;
+	padding: 10px;
+}
+
+.dropdown-menu1 ul li:hover .dropdown-menu-1 {
+	display: block;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	background-color: var(--color-black);
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #e7e7e7;
+	height: 100vh;
+}
+
+
+
+.box {
+	text-align: center;
+}
+
+.overlay {
+	position: fixed;
+	top: 10%;
+	bottom: 10%;
+	left: 10%;
+	right: 10%;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+}
+
+input[type=text],
+select,
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type="submit"] {
+	background-color: #413b3b;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #222831;
+}
+
+#topnavbar{
+    text-align: center;
+    background-color: #00ADB5;
+    padding: 20px;
+    font-size: 30px;
+    color: #EEEEEE;
+}
+
+#inpContainer{
+    padding: 30px;
+    text-align: center;
+}
+
+#inpTask{
+    background-color: #EEEEEE;
+    padding: 5px;
+    border: 0;
+    border-radius: 3px;
+    width: 700px;
+    height: 35px;
+    font-size: 22px;
+}
+
+#addbtn, #clrbtn, #updatebtn{
+    width: 210px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+
+#taskContainer{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 640px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+#emp{
+    display: flex;
+    justify-content: center;
+}
+
+#empty{
+    width: 608px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background-color: green;
+}
+
+.checkbtn{
+    width: 15px;
+    height: 15px;
+    opacity: 50%;
+}
+
+.task{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    background-color: #393E46;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 1px 0 0 3px;
+}
+
+.task>div{
+    margin-left: 1%;
+    width: 80%;
+    font-size: 18px;
+}
+
+.task>i{
+    opacity: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fa-trash-can{
+    color: rgb(255, 36, 36);
+}
+
+#msg{
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    width: 160px;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    font-weight: bold;
+    opacity: 0;
+}
+
+@media screen and (max-width: 800px){
+    #inpTask{
+        width: 90%;
+    }
+    #taskContainer{
+        width: 90%;
+    }
+    .fa-regular{
+        margin: 0 1%;
+    }
+    #empty{
+        width: 80%;
+    }
+}
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+* Always set the map height explicitly to define the size of the div element
+* that contains the map. 
+*/
+#map {
+    height: 100%;
+}
+
+/* 
+  * Optional: Makes the sample page fill the window. 
+  */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mapcontainer {
+	width: 100vw;
+	height: 90vh;
+	position: fixed;
+	bottom: 0;
+}
+
+:root {
+	--color-primary: #0073ff;
+	--color-white: #e9e9e9;
+	--color-black: #141d28;
+	--color-black-1: #212b38;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.logo {
+	color: var(--color-white);
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.logo span {
+	color: var(--color-primary);
+}
+
+.menu-bar {
+	background-color: var(--color-black);
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2%;
+	position: fixed;
+}
+
+.menu-bar ul {
+	list-style: none;
+	display: flex;
+}
+
+.menu-bar ul li {
+	padding: 10px 30px;
+	position: relative;
+}
+
+.menu-bar ul li a {
+	font-size: 20px;
+	color: var(--color-white);
+	text-decoration: none;
+
+	transition: all 0.3s;
+}
+
+.menu-bar ul li a:hover {
+	color: var(--color-primary);
+}
+
+.fas {
+	float: right;
+	margin-left: 10px;
+	padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+	display: none;
+	overflow-y: scroll;
+	height: 50vh;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+	display: block;
+	margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+	width: 150px;
+	padding: 10px;
+}
+
+.dropdown-menu-1 {
+	display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+	display: block;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	background-color: var(--color-black);
+}
+
+.useridblock{
+	width: 15%;
+	height: 100%;
+	color: white;
+	display: flex;
+	text-align: right;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.userdetails{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+.useridblock img{
+	height: 90%;
+}
+
+#logout{
+	color: #0073ff;
+	cursor: pointer;
+}

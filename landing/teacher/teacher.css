@@ -151,11 +151,20 @@ body {
 	transition: opacity 500ms;
 	visibility: hidden;
 	opacity: 0;
+	/* justify-content: center; */
 }
 
 .overlay:target {
 	visibility: visible;
 	opacity: 1;
+}
+
+.addm
+{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
 }
 
 form label {

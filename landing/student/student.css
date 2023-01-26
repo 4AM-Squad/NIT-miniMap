@@ -184,6 +184,22 @@ body {
 	opacity: 1;
 }
 
+.overlay1 {
+	position: fixed;
+	top: 10%;
+	bottom: 10%;
+	left: 10%;
+	right: 10%;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay1:target {
+	visibility: visible;
+	opacity: 1;
+}
 form label {
 	text-transform: uppercase;
 	font-weight: 500;
@@ -495,3 +511,21 @@ body {
 	color: #0073ff;
 	cursor: pointer;
 }
+
+/* body,html {
+    margin: 0;
+    padding: 0;
+    background-color: #12181B;
+} */
+/* * {
+    box-sizing: border-box;
+} */
+
+/* .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+/* } */
+

@@ -5,7 +5,7 @@ let club = document.getElementById('club');
 let body = document.getElementById('body');
 
 window.addEventListener('load', () => {
-    if(localStorage.role){
+    if (localStorage.role) {
         window.location.href = `${localStorage.role}/${localStorage.role}.html`;
     }
 });
@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 teacher.addEventListener('click', () => {
     localStorage.removeItem('role');
     localStorage.setItem('role', 'teacher');
-    window.location.href = 'teacher/teacher.html';
+    window.location.href = 'teacher/login page/login.html';
 });
 
 student.addEventListener('click', () => {

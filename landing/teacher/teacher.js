@@ -81,12 +81,12 @@ function onClickHandler(element){
 }
 
 let username = document.getElementById('username');
-let userrollno = document.getElementById('userrollno');
 let logout = document.getElementById('logout');
 
 // console.log(JSON.parse(localStorage.user));
 
-// let us = JSON.parse(localStorage.user);
+let teacher = JSON.parse(localStorage.teacher);
+username.innerHTML = teacher.name
 
 // username.innerHTML = us.Name;
 // userrollno.innerHTML = us.RollNo;

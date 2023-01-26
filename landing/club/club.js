@@ -80,31 +80,126 @@ function onClickHandler(element) {
 }
 
 let memberArray = []
+let meetArray = []
 let club = JSON.parse(localStorage.clubuser)
 let list = document.getElementsByClassName('list')[0]
+let meets = club.meetings
 
-fetch(`http://localhost:3000/clubdb/${club.name}`)
-.then(res => res.json())
-.then(data => {
-	data = data[0];
-	memberArray = data.roll_no;
-	console.log(memberArray)
-	let i=-1;
-	memberArray.forEach(elem => {
-		i++;
-		let ele = elem[i]
-		list.innerHTML += `
-			<div class="meeting">
+async function getAllMems() {
+	club = JSON.parse(localStorage.clubuser)
+	list.innerHTML = '';
+	await fetch(`http://localhost:3000/clubdb/${club.name}`)
+		.then(res => res.json())
+		.then(data => {
+			data = data[0];
+			memberArray = data.roll_no;
+			console.log(memberArray)
+			let i = -1;
+			memberArray.forEach(elem => {
+				i++;
+				let ele = elem[i]
+				list.innerHTML += `
+				<div class="meeting">
 				<div class="memberroll">${ele.RollNo}</div>
 				<div class="membername">${ele.Name}</div>
 				<div class="memberclass">${ele.Branch} - ${ele.Subsection}</div>
-				<img src="./trash.png" alt="delete" class="deletemem" onclick="delmem(this)">
-			</div>
-		`
+				</div>
+			`
+			})
+		})
+}
+
+getAllMems();
+
+let addmemheading = document.getElementById('addmemheading')
+let loc_set = document.getElementById('branch_select')
+let addmeetbtn = document.getElementById('addmeetbtn')
+let date = document.getElementById('date')
+let agenda = document.getElementById('agenda')
+let list1 = document.getElementsByClassName('list1')[0]
+
+
+addmemheading.addEventListener('click', getAllMems)
+fetch('./locations.json')
+	.then(response => response.json())
+	.then(data => {
+		data.places.forEach(e => {
+			loc_set.innerHTML += `<option value="${e.name}">${e.name}</option>`
+		})
 	})
+
+addmeetbtn.addEventListener('click', async () => {
+	let meetdate = date.value.split('T')[0]
+	let meettime = date.value.split('T')[1]
+	let dd = meetdate.split('-')[2]
+	let mm = meetdate.split('-')[1]
+	let yy = meetdate.split('-')[0]
+	console.log(meetdate)
+	console.log(meettime)
+	list1.innerHTML += `
+		<div class="meeting2">
+			<div class="meetdetails">   
+				<div class="datetime">${dd}-${mm}-${yy}</div>
+				<div class="datetime2">${meettime}:00</div>
+				<div class="membername">${loc_set.value}</div>
+			</div>
+			<div class="meetagenda">${agenda.value}</div>
+		</div>
+	`
+	let meetobj = {
+		date: meetdate,
+		time: meettime,
+		location: loc_set.value,
+		agenda: agenda.value
+	}
+
+	club.meetings.push(meetobj)
+
+	await fetch(`http://localhost:3000/clubdb/addMeeting`, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(club)
+	})
+		.then(response => response.json())
+		.then(data => {
+			localStorage.removeItem('clubuser');
+			localStorage.setItem('clubuser', JSON.stringify(data))
+		})
 })
 
-function delmem(element){
-    console.log(element.parentNode.parentNode.childNodes)
-    // console.log(document.getElementsByClassName('meeting'))
+async function getAllMeets() {
+	club = JSON.parse(localStorage.clubuser)
+	list1.innerHTML = '';
+
+	await fetch(`http://localhost:3000/clubdb/${club.name}`)
+		.then(res => res.json())
+		.then(data => {
+			data = data[0];
+			meetArray = data.meetings;
+			console.log(meetArray)
+			let i = -1;
+			meetArray.forEach(elem => {
+				i++;
+				let ele = elem[i]
+				// console.log(ele)
+				// let meettime = ele.time
+				// let dd = ele.date.split('-')[2]
+				// let mm = ele.date.split('-')[1]
+				// let yy = ele.date.split('-')[0]
+				// list1.innerHTML += `
+				// 	<div class="meeting2">
+				// 		<div class="meetdetails">   
+				// 			<div class="datetime">${dd}-${mm}-${yy}</div>
+				// 			<div class="datetime2">${meettime}:00</div>
+				// 			<div class="membername">${ele.location}</div>
+				// 		</div>
+				// 		<div class="meetagenda">${ele.agenda}</div>
+				// 	</div>
+				// `
+			})
+		})
 }
+
+getAllMeets()

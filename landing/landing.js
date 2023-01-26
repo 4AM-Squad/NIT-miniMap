@@ -11,8 +11,6 @@ window.addEventListener('load', () => {
 });
 
 teacher.addEventListener('click', () => {
-    localStorage.removeItem('role');
-    localStorage.setItem('role', 'teacher');
     window.location.href = 'teacher/login page/login.html';
 });
 

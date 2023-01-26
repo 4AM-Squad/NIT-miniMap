@@ -13,23 +13,14 @@ router.get('/', async (req, res) => {
 })
 
 // Getting one
-router.get('/:id', async (req, res) => {
+router.get('/:id', getTeacher, async (req, res) => {
     try{
-        const teach = await Teacher.find({id : req.params.id})
+        const teach = await Teacher.findById(req.params.id)
         res.send(teach)
     } catch (err){
         res.status(500).json({message : err.message})
     }
 })
-
-// router.get('/:day', async (req, res) => {
-//     try{
-//         const teach = await Teacher.find({day : req.params.day})
-//         res.send(teach)
-//     } catch (err){
-//         res.status(500).json({message : err.message})
-//     }
-// })
 
 // Creating one
 router.post('/', async (req, res) => {

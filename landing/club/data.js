@@ -68,7 +68,6 @@ function RetrieveData() {
 					<div class="memberroll">${user.RollNo}</div>
 					<div class="membername">${user.Name}</div>
 					<div class="memberclass">${user.Branch} - ${user.Subsection}</div>
-					<img src="./trash.png" alt="delete" class="deletemem" onclick="delmem(this)">
 					</div>
 					`
 				} else {
@@ -77,7 +76,6 @@ function RetrieveData() {
 					<div class="memberroll">${inpmemTask.value}</div>
 					<div class="membername">- - -</div>
 					<div class="memberclass">- - -</div>
-					<img src="./trash.png" alt="delete" class="deletemem" onclick="delmem(this)">
 					</div>
                 	`
 				}
@@ -114,9 +112,16 @@ searchmembtn.addEventListener('click', () => {
 	inpmemTask.value = ''
 	let i=0;
 	if(rolls){
-		for(let i=0; i<rolls.length; i++){
+		for(i=0; i<rolls.length; i++){
 			if(mem == rolls[i][i].RollNo){
-				alert('Member exists');
+				let user = rolls[i][i]
+				list.innerHTML = `
+					<div class="meeting">
+					<div class="memberroll">${user.RollNo}</div>
+					<div class="membername">${user.Name}</div>
+					<div class="memberclass">${user.Branch} - ${user.Subsection}</div>
+					</div>
+				`
 				break;
 			}
 		}

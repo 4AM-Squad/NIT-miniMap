@@ -54,6 +54,10 @@ GET http://localhost:3000/teacherdb
 
 ###
 
+GET http://localhost:3000/teacherdb/63cfcb285b0c811aea2d4611
+
+###
+
 POST http://localhost:3000/teacherdb/
 Content-Type: application/json
 

@@ -62,12 +62,12 @@
     </div>
     <div class="overlay1" id="divOne">
         <div class="addm">
-            <h1 style="color: white;text-align:center;font-size:56px;margin-bottom:10px ">Add Meet</h1>
+            <h1 style="color: white;text-align:center;font-size:56px;margin-bottom:10px ">Club Meetings</h1>
             <label style="color: white;font-size:30px;margin-right: 10px;"> Date & Time: </label>
-            <input type="datetime-local" style="width:44%;height:50px; font-size: 2em;" class="date">
+            <input type="datetime-local" style="width:44%;height:50px; font-size: 2em;" id="date">
             <br>
             <br>
-            <label style="color: white;font-size:30px">Location:</label>
+            <label style="color: white;font-size:30px">Location: </label>
             <select id="branch_select" style="
 					background-color: #f9f9f9;
 					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -76,14 +76,12 @@
                     font-size:15px;
 			  	">
                 <option value="">Location</option>
-
             </select>
-            <input style="color: rgb(0, 0, 0);height:50px;" type="text" id="inpTask" placeholder="Enter Agenda"><br>
-            <button id="addbtn">Add Meet</button>
+            <input style="color: rgb(0, 0, 0);height:50px;" type="text" id="agenda" placeholder="Enter Agenda"><br>
+            <button id="addmeetbtn">Add Meet</button>
         </div>
+        <br>
         <div class="list1">
-            <br>
-
         </div>
     </div>
     <div class="overlay" id="divtwo">
@@ -95,7 +93,7 @@
         </div>
         <div>
             <br>
-            <h2 style="color:white;font-size:56px">Current Members</h2>
+            <h2 id="addmemheading" style="color:white;font-size:56px">Current Members</h2>
             <br>
             <div class="list">
             </div>
@@ -106,7 +104,7 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
         defer>
-    </script>
+        </script>
 </body>
 
 </html>

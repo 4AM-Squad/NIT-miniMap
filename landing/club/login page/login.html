@@ -14,7 +14,7 @@
 
 	<div class="center">
 
-		<h1>Register</h1>
+		<h1>Login</h1>
 		<form method="post">
 			<div class="txt_field">
 				<select id="branch_select" style="
@@ -24,7 +24,7 @@
 			  		padding: 12px 16px;
 			  	">
 					<option value="">Clubs/Society</option>
-					<option value="Technobyte">Technobyte</option>
+					<!-- <option value="Technobyte">Technobyte</option>
 					<option value="I&E-CELL">I&E-CELL</option>
 					<option value="MAD">MAD</option>
 					<option value="PhotoG">PhotoG</option>
@@ -34,20 +34,20 @@
 					<option value="LSD">LSD</option>
 					<option value="SpicMacy">SpicMacy</option>
 					<option value="MECHSOCH">MECHSOCH</option>
-					<option value="ElectroBUZZ">ElectroBUZZ</option>
+					<option value="ElectroBUZZ">ElectroBUZZ</option> -->
 				</select>
 
 			</div>
 			<div class="txt_field">
-				<input type="password" style="color:aliceblue" required>
+				<input type="password" id="loginpwd" style="color:aliceblue" required>
 				<span></span>
 				<label>Password</label>
 			</div>
-			<input type="submit" value="Login">
+			<input type="submit" value="Login" id="loginbtn">
 			<br><br>
 		</form>
 	</div>
-
+	<script src="./login.js"></script>
 </body>
 
 </html>

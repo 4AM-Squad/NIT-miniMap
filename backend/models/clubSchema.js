@@ -10,11 +10,11 @@ const clubSchema = new mongoose.Schema({
         required : true
     },
     roll_no : {
-        type : [Number],
+        type : [mongoose.Schema.Types.Mixed],
         default : []
     },
     meetings : {
-        type : [Date],
+        type : [mongoose.Schema.Types.Mixed],
         default : []
     },
     events : {

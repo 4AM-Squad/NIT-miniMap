@@ -2,7 +2,7 @@ GET http://localhost:3000/timetable
 
 ###
 
-GET http://localhost:3000/timetable/Tuesday/CS/A/3
+GET http://localhost:3000/timetable/Wednesday/CS/A/3
 
 ###
 
@@ -69,6 +69,21 @@ DELETE  http://localhost:3000/teacherdb/63cf63ac604073bc496dd2a3
 ### CLUB'S ROUTES AHEAD
 
 GET http://localhost:3000/clubdb
+
+###
+
+GET http://localhost:3000/clubdb/Technobyte
+
+###
+
+PATCH  http://localhost:3000/timetable/63cd3f1c36726c244b861174
+Content-Type: application/json
+
+{
+    "name": "Industry & Entrepreneurship Cell",
+    "password": "Icell@Techspardha",
+    
+}
 
 ###
 

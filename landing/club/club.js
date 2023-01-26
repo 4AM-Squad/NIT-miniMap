@@ -1,7 +1,6 @@
-
 let locations;
 let loclist = document.getElementById('loclist');
-console.log(loclist.childNodes);
+
 
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
@@ -28,68 +27,84 @@ function initMap() {
 	};
 
 	fetch('./locations.json')
-	.then(response => response.json())
-	.then(data => {
-		data.places.forEach(element => {
-			loclist.innerHTML += `<li><a href="#" onclick="onClickHandler(this)">${element.name}</a></li>`;
+		.then(response => response.json())
+		.then(data => {
+			data.places.forEach(element => {
+				loclist.innerHTML += `<li><a href="#" onclick="onClickHandler(this)">${element.name}</a></li>`;
 
-			const marker = new google.maps.Marker({
-				position: { lat: element.latitude, lng: element.longitude },
-				map,
-				icon: image,
-				shape: shape,
-				title: element.name,
-				animation: google.maps.Animation.DROP
-			});
-	
-			marker.addListener("click", (e) => {
-				const contentString =
-					'<div class="info-window-content">' +
-					'<h2>' + element.name + '</h2>' +
-					'<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
-					'</div>';
-			
-				infoWindow.setContent(contentString);
-				infoWindow.open({
-					anchor: marker,
+				const marker = new google.maps.Marker({
+					position: { lat: element.latitude, lng: element.longitude },
 					map,
-					shouldFocus: false,
+					icon: image,
+					shape: shape,
+					title: element.name,
+					animation: google.maps.Animation.DROP
+				});
+
+				marker.addListener("click", (e) => {
+					const contentString =
+						'<div class="info-window-content">' +
+						'<h2>' + element.name + '</h2>' +
+						'<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
+						'</div>';
+
+					infoWindow.setContent(contentString);
+					infoWindow.open({
+						anchor: marker,
+						map,
+						shouldFocus: false,
+					});
 				});
 			});
 		});
-	});
 
-	map.setOptions({minZoom: 15});
+	map.setOptions({ minZoom: 15 });
 
 	infoWindow = new google.maps.InfoWindow({
 		content: ""
 	});
 }
 
-function onClickHandler(element){
+function onClickHandler(element) {
 	let str = element.innerHTML;
 	let obj;
 
 	fetch('./locations.json')
-	.then(response => response.json())
-	.then(data => {
-		obj = data.places.find(el => el.name == str);
-		localStorage.setItem('targetLat', obj.latitude);
-		localStorage.setItem('targetLng', obj.longitude);
-		window.location.href = 'directions/directions.html'
-	});
+		.then(response => response.json())
+		.then(data => {
+			obj = data.places.find(el => el.name == str);
+			localStorage.setItem('targetLat', obj.latitude);
+			localStorage.setItem('targetLng', obj.longitude);
+			window.location.href = 'directions/directions.html'
+		});
 }
 
-let username = document.getElementById('username');
-let userrollno = document.getElementById('userrollno');
-let logout = document.getElementById('logout');
+let memberArray = []
+let club = JSON.parse(localStorage.clubuser)
+let list = document.getElementsByClassName('list')[0]
 
-// console.log(JSON.parse(localStorage.user));
-// let us = JSON.parse(localStorage.user);
-// username.innerHTML = us.Name;
-// userrollno.innerHTML = us.RollNo;
+fetch(`http://localhost:3000/clubdb/${club.name}`)
+.then(res => res.json())
+.then(data => {
+	data = data[0];
+	memberArray = data.roll_no;
+	console.log(memberArray)
+	let i=-1;
+	memberArray.forEach(elem => {
+		i++;
+		let ele = elem[i]
+		list.innerHTML += `
+			<div class="meeting">
+				<div class="memberroll">${ele.RollNo}</div>
+				<div class="membername">${ele.Name}</div>
+				<div class="memberclass">${ele.Branch} - ${ele.Subsection}</div>
+				<img src="./trash.png" alt="delete" class="deletemem" onclick="delmem(this)">
+			</div>
+		`
+	})
+})
 
-logout.addEventListener('click', () => {
-	localStorage.clear();
-	window.location.href = '../landing.html';
-});
+function delmem(element){
+    console.log(element.parentNode.parentNode.childNodes)
+    // console.log(document.getElementsByClassName('meeting'))
+}

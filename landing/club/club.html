@@ -20,12 +20,12 @@
             <a href="./club.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <ul style="display: flex; align-items:center; justify-content:space-evenly; text-align: center;">
                 <li><a href="./club.html">Explore</a>
                 </li>
-                <li><a href="./timetable/timetable.html">Time-Table<i class="fas fa-time"></i></a></li>
-                <li><a class="button" href="#divOne">Start Meet<i class="fas fa-check"></i></a></li>
-                <li><a class="button" href="#divtwo">Members Info.<i class="fas fa-add"></i></a></li>
+                <!-- <li><a href="./timetable/timetable.html">Time-Table</i></a></li> -->
+                <li><a class="button" href="#divOne">Club Meetings</i></a></li>
+                <li><a class="button" href="#divtwo">Member Info.</i></a></li>
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
                     <div class="dropdown-menu">
@@ -53,8 +53,7 @@
             </ul>
             <div class="useridblock">
                 <div class="userdetails">
-                    <div id="username"></div>
-                    <div id="userrollno"></div>
+                    <span id="clubname"></span>
                     <div id="logout">Logout</div>
                 </div>
                 <img src="./PFPW.png" alt="ProfilePicture">
@@ -90,24 +89,24 @@
     <div class="overlay" id="divtwo">
         <div class="addm">
             <h1 style="color: white;text-align:center;font-size:56px">Add Members</h1>
-            <input style="color: white;" type="text" id="inpTask" placeholder="Enter Roll no. here..."><br>
-            <button id="updatebtn">Search</button>
-            <button id="addbtn">Add Member</button>
+            <input type="text" id="inpmemTask" placeholder="Enter Roll no. here..."><br>
+            <button id="searchmembtn">Search</button>
+            <button id="addmembtn">Add Member</button>
         </div>
         <div>
             <br>
             <h2 style="color:white;font-size:56px">Current Members</h2>
             <br>
             <div class="list">
-                hi
             </div>
         </div>
     </div>
     <script src="club.js"></script>
+    <script src="data.js" type="module"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
         defer>
-        </script>
+    </script>
 </body>
 
 </html>

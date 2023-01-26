@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
 })
 
 // Getting one
-router.get('/:id', async (req, res) => {
+router.get('/:name', async (req, res) => {
     try{
-        const clb = await Club.find({id : req.params.id})
+        const clb = await Club.find({name : req.params.name})
         res.send(clb)
     } catch (err){
         res.status(500).json({message : err.message})
@@ -91,5 +91,19 @@ async function getClub(req, res, next){
     res.club = club
     next()
 }
+
+router.put("/addRollNo",(req,res)=>{
+    const club= req.body;
+    console.log(club)
+    Club.findByIdAndUpdate(club._id,{
+        $push:{
+            roll_no:club.roll_no
+        }
+    },{
+        new:true
+    }).then((data)=>{
+        res.send(data)
+    })
+})
 
 module.exports = router

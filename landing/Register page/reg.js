@@ -34,20 +34,20 @@ var subbox = document.getElementById("sub_select");
 var insertbtn = document.getElementById("signUp");
 
 function validatePassword() {
-    var re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    return re.test(passbox.value);
+  var re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+  return re.test(passbox.value);
 }
 
 function InsertData() {
   const dbref = ref(db);
 
   get(child(dbref, "roll_no/" + rollbox.value)).then((snapshot) => {
-    
+
     if (!validatePassword()) {
       alert("Password is invalid ( must have at least one letter , number and special character with length in 6 to 16)");
       return;
     }
-    
+
     if (snapshot.exists()) {
       alert("Account already exists");
     } else {
@@ -62,14 +62,16 @@ function InsertData() {
         },
         alert("Successfully added")
       )
-        .then(()=>{
-        	window.location.href = '../student/student.html';
+        .then(() => {
+          localStorage.removeItem('role');
+          localStorage.setItem('role', 'student');
+          window.location.href = '../student/student.html';
         })
         .catch((error) => {
           alert("Unsucessfullly");
         });
 
-        RetrieveData();
+      RetrieveData();
     }
   });
 }
@@ -80,7 +82,7 @@ function RetrieveData() {
   get(child(dbref, "roll_no/" + rollbox.value))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        // console.log(snapshot.val()); 
+        console.log(snapshot.val()); 
         localStorage.setItem('user', JSON.stringify(snapshot.val()));
       } else {
         alert("No data found");
@@ -94,5 +96,5 @@ function RetrieveData() {
 insertbtn.addEventListener("click", (event) => {
   event.preventDefault();
   InsertData();
-  
+
 });

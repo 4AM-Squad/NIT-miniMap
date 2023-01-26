@@ -191,8 +191,11 @@ body {
 
 .list {
 	color: white;
-	height: 470px;
+	height: 340px;
 	overflow-y: scroll;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .overlay:target {
@@ -263,7 +266,7 @@ body {
 	text-align: center;
 }
 
-#inpTask {
+#inpTask, #inpmemTask {
 	background-color: #EEEEEE;
 	padding: 5px;
 	border: 0;
@@ -273,9 +276,10 @@ body {
 	font-size: 22px;
 }
 
+#addmembtn,
 #addbtn,
 #clrbtn,
-#updatebtn {
+#searchmembtn {
 	width: 210px;
 	height: 45px;
 	font-size: 18px;
@@ -478,5 +482,24 @@ body {
 
 #logout {
 	color: #0073ff;
+	cursor: pointer;
+}
+
+.meeting{
+	/* background-color: #0073ff; */
+	width: 70%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	font-size: 24px;
+}
+
+.meeting div{
+	width: 25%;
+}
+
+.meeting img{
+	width: 30px;
 	cursor: pointer;
 }

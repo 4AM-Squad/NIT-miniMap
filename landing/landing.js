@@ -17,8 +17,6 @@ teacher.addEventListener('click', () => {
 });
 
 student.addEventListener('click', () => {
-    localStorage.removeItem('role');
-    localStorage.setItem('role', 'student');
     window.location.href = 'Register page/register.html';
 });
 
@@ -29,7 +27,5 @@ visitor.addEventListener('click', () => {
 });
 
 club.addEventListener('click', () => {
-    localStorage.removeItem('role');
-    localStorage.setItem('role', 'club');
     window.location.href = 'club/login page/login.html';
 });

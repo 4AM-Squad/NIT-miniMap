@@ -95,3 +95,4 @@ logout.addEventListener('click', () => {
 	localStorage.clear();
 	window.location.href = '../landing.html';
 });
+

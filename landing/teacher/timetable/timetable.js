@@ -66,10 +66,10 @@ function initMap() {
                     <div class="details">
                         <h4 id="sub">${el.subject}</h4>
                         <h4 id="type">(${el.type})</h4>
-                        <h4 id="type">${el.branch} - ${el.section}${el.subsection}</h4>
+                        <h4 id="branchsec">${el.branch} - ${el.section}${el.subsection}</h4>
                         <h4 id="loc">${el.location}</h4>
                         <h4 id="time">${el.start_time} - ${el.end_time}</h4>
-                        <button class="remclass">Remove Class</button>
+                        <button class="remclass" onclick="removeClass(this)">Remove Class</button>
                     </div>
                 </div>
             `
@@ -145,5 +145,26 @@ logout.addEventListener('click', () => {
 });
 
 async function removeClass(element){
-    await fetch(``)
+    let classid;
+    const time = element.parentNode.childNodes[9].innerHTML.split(' - ')[0].replaceAll(':', '_')
+    const branch = element.parentNode.childNodes[5].innerHTML.split(' - ')[0]
+    const section = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][0]
+    const subsection = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][1]
+    await fetch(`http://localhost:3000/timetable/${day}/${branch}/${section}/${subsection}/${time}`)
+    .then(response => response.json())
+    .then(data => {
+        classid = data[0]._id;
+        console.log(classid);
+    })
+    .catch(err => console.log(err));
+
+    await fetch(`http://localhost:3000/timetable/${classid}`, {
+        method : 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+
+    window.location.reload();
 }
+

@@ -1,9 +1,9 @@
-.StudentCompo{
+.StudentCompo {
 	display: flex;
 	flex-direction: column;
 }
 
-.times{
+.times {
 	background: linear-gradient(to bottom, white, #dafcfc);
 	width: 20%;
 	display: flex;
@@ -14,12 +14,12 @@
 	color: black;
 }
 
-.times h2{
+.times h2 {
 	text-align: center;
 	margin-top: 1rem;
 }
 
-.table{
+.table {
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -27,32 +27,32 @@
 	flex-direction: column;
 }
 
-#data{
+#data {
 	display: flex;
 	justify-content: space-between;
 	margin: 1rem;
 }
 
-.details{
+.details {
 	text-align: right;
 	width: 80%;
 }
 
-.table img{
-	width: 60px;
+.table img {
+	width: 80px;
 	position: relative;
 }
 
 #map {
-    height: 90vh;
+	height: 90vh;
 	width: 80%;
 }
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .mapcontainer {
@@ -156,14 +156,14 @@ body {
 }
 
 #map {
-    height: 100%;
+	height: 100%;
 }
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .mapcontainer {
@@ -216,8 +216,8 @@ body {
 
 	transition: all 0.3s;
 }
-.login
-{
+
+.login {
 	font-size: 1em;
 	padding: 15px 35px;
 	color: #fff;
@@ -227,6 +227,7 @@ body {
 	background: #403e3d;
 	border-radius: 50px;
 }
+
 .menu-bar ul li a:hover {
 	color: var(--color-primary);
 }
@@ -278,11 +279,12 @@ body {
 	display: none;
 	/* height: 30vh; */
 }
-.dropdown-menu1 h4
-{
+
+.dropdown-menu1 h4 {
 	width: 190px;
 	padding: 10px 40px;
 }
+
 .menu-bar ul li:hover .dropdown-menu1 {
 	display: block;
 	position: absolute;
@@ -308,6 +310,7 @@ body {
 	top: 0;
 	background-color: var(--color-black);
 }
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: #e7e7e7;
@@ -367,129 +370,136 @@ input[type="submit"] {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 }
-*{
-    margin: 0;
+
+* {
+	margin: 0;
 }
 
-body{
-    background-color: #222831;
+body {
+	background-color: #222831;
 }
 
-#topnavbar{
-    text-align: center;
-    background-color: #00ADB5;
-    padding: 20px;
-    font-size: 30px;
-    color: #EEEEEE;
+#topnavbar {
+	text-align: center;
+	background-color: #00ADB5;
+	padding: 20px;
+	font-size: 30px;
+	color: #EEEEEE;
 }
 
-#inpContainer{
-    padding: 30px;
-    text-align: center;
+#inpContainer {
+	padding: 30px;
+	text-align: center;
 }
 
-#inpTask{
-    background-color: #EEEEEE;
-    padding: 5px;
-    border: 0;
-    border-radius: 3px;
-    width: 700px;
-    height: 35px;
-    font-size: 22px;
+#inpTask {
+	background-color: #EEEEEE;
+	padding: 5px;
+	border: 0;
+	border-radius: 3px;
+	width: 700px;
+	height: 35px;
+	font-size: 22px;
 }
 
-#addbtn, #clrbtn, #updatebtn{
-    width: 210px;
-    height: 45px;
-    font-size: 18px;
-    cursor: pointer;
-    
+#addbtn,
+#clrbtn,
+#updatebtn {
+	width: 210px;
+	height: 45px;
+	font-size: 18px;
+	cursor: pointer;
+
 }
 
-#taskContainer{
-    margin: auto;
-    margin-bottom: 20px;
-    width: 640px;
-    font-size: 20px;
-    color: white;
-    text-align: center;
+#taskContainer {
+	margin: auto;
+	margin-bottom: 20px;
+	width: 640px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
 }
 
-#emp{
-    display: flex;
-    justify-content: center;
+#emp {
+	display: flex;
+	justify-content: center;
 }
 
-#empty{
-    width: 608px;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    background-color: green;
+#empty {
+	width: 608px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	padding: 15px;
+	background-color: green;
 }
 
-.checkbtn{
-    width: 15px;
-    height: 15px;
-    opacity: 50%;
+.checkbtn {
+	width: 15px;
+	height: 15px;
+	opacity: 50%;
 }
 
-.task{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: left;
-    background-color: #393E46;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 1px 0 0 3px;
+.task {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: left;
+	background-color: #393E46;
+	padding: 10px;
+	border: 1px solid black;
+	margin: 1px 0 0 3px;
 }
 
-.task>div{
-    margin-left: 1%;
-    width: 80%;
-    font-size: 18px;
+.task>div {
+	margin-left: 1%;
+	width: 80%;
+	font-size: 18px;
 }
 
-.task>i{
-    opacity: 50%;
-    font-size: 18px;
-    cursor: pointer;
+.task>i {
+	opacity: 50%;
+	font-size: 18px;
+	cursor: pointer;
 }
 
-.fa-trash-can{
-    color: rgb(255, 36, 36);
+.fa-trash-can {
+	color: rgb(255, 36, 36);
 }
 
-#msg{
-    position: fixed;
-    right: 30px;
-    bottom: 50px;
-    width: 160px;
-    padding: 30px;
-    text-align: center;
-    font-size: 18px;
-    background-color: #00ADB5;
-    color: #EEEEEE;
-    font-weight: bold;
-    opacity: 0;
+#msg {
+	position: fixed;
+	right: 30px;
+	bottom: 50px;
+	width: 160px;
+	padding: 30px;
+	text-align: center;
+	font-size: 18px;
+	background-color: #00ADB5;
+	color: #EEEEEE;
+	font-weight: bold;
+	opacity: 0;
 }
 
-@media screen and (max-width: 800px){
-    #inpTask{
-        width: 90%;
-    }
-    #taskContainer{
-        width: 90%;
-    }
-    .fa-regular{
-        margin: 0 1%;
-    }
-    #empty{
-        width: 80%;
-    }
+@media screen and (max-width: 800px) {
+	#inpTask {
+		width: 90%;
+	}
+
+	#taskContainer {
+		width: 90%;
+	}
+
+	.fa-regular {
+		margin: 0 1%;
+	}
+
+	#empty {
+		width: 80%;
+	}
 }
+
 /**
  * @license
  * Copyright 2019 Google LLC. All Rights Reserved.
@@ -500,7 +510,7 @@ body{
 * that contains the map. 
 */
 #map {
-    height: 100%;
+	height: 100%;
 }
 
 /* 
@@ -508,9 +518,9 @@ body{
   */
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .mapcontainer {
@@ -623,7 +633,7 @@ body {
 	background-color: var(--color-black);
 }
 
-.useridblock{
+.useridblock {
 	width: 15%;
 	height: 100%;
 	color: white;
@@ -633,18 +643,28 @@ body {
 	align-items: center;
 }
 
-.userdetails{
+.userdetails {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
 }
 
-.useridblock img{
+.useridblock img {
 	height: 90%;
 }
 
-#logout{
+#logout {
 	color: #0073ff;
+	cursor: pointer;
+}
+
+.remclass {
+	width: 50%;
+	height: 25px;
+	background-color: rgb(255, 74, 74);
+	color: white;
+	border: 0;
+	border-radius: 7px;
 	cursor: pointer;
 }

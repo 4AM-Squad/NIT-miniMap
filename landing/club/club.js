@@ -154,20 +154,28 @@ addmeetbtn.addEventListener('click', async () => {
 	}
 
 	club.meetings.push(meetobj)
+	changedb(club)
 
+	loc_set.value = ''
+	date.value = ''
+	agenda.value = ''
+})
+
+async function changedb(clb) {
 	await fetch(`http://localhost:3000/clubdb/addMeeting`, {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		body: JSON.stringify(club)
+		body: JSON.stringify(clb)
 	})
-		.then(response => response.json())
-		.then(data => {
-			localStorage.removeItem('clubuser');
-			localStorage.setItem('clubuser', JSON.stringify(data))
-		})
-})
+	.then(response => response.json())
+	.then(data => {
+		console.log(data)
+		localStorage.removeItem('clubuser');
+		localStorage.setItem('clubuser', JSON.stringify(data))
+	})
+}
 
 async function getAllMeets() {
 	club = JSON.parse(localStorage.clubuser)
@@ -177,27 +185,27 @@ async function getAllMeets() {
 		.then(res => res.json())
 		.then(data => {
 			data = data[0];
+
 			meetArray = data.meetings;
 			console.log(meetArray)
 			let i = -1;
-			meetArray.forEach(elem => {
-				i++;
-				let ele = elem[i]
+			meetArray.forEach(ele => {
 				// console.log(ele)
-				// let meettime = ele.time
-				// let dd = ele.date.split('-')[2]
-				// let mm = ele.date.split('-')[1]
-				// let yy = ele.date.split('-')[0]
-				// list1.innerHTML += `
-				// 	<div class="meeting2">
-				// 		<div class="meetdetails">   
-				// 			<div class="datetime">${dd}-${mm}-${yy}</div>
-				// 			<div class="datetime2">${meettime}:00</div>
-				// 			<div class="membername">${ele.location}</div>
-				// 		</div>
-				// 		<div class="meetagenda">${ele.agenda}</div>
-				// 	</div>
-				// `
+				i++;
+				let meettime = ele[i].time
+				let dd = ele[i].date.split('-')[2]
+				let mm = ele[i].date.split('-')[1]
+				let yy = ele[i].date.split('-')[0]
+				list1.innerHTML += `
+					<div class="meeting2">
+						<div class="meetdetails">   
+							<div class="datetime">${dd}-${mm}-${yy}</div>
+							<div class="datetime2">${meettime}:00</div>
+							<div class="membername">${ele[i].location}</div>
+						</div>
+						<div class="meetagenda">${ele[i].agenda}</div>
+					</div>
+				`
 			})
 		})
 }

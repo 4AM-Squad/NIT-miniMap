@@ -58,11 +58,11 @@ function initMap() {
     let subsec = user.Subsection;
     subsec = Number(subsec);
     let sec;
-    if(subsec <= 12)
+    if (subsec <= 12)
         sec = 'C';
-    if(subsec <= 8)
-    sec = 'B';
-    if(subsec <= 4)
+    if (subsec <= 8)
+        sec = 'B';
+    if (subsec <= 4)
         sec = 'A';
 
     fetch(`http://localhost:3000/timetable/${day}/${user.Branch}/${sec}/${subsec}`)
@@ -89,7 +89,7 @@ function initMap() {
                     .then(response => response.json())
                     .then(dt => {
                         dt.places.forEach(i => {
-                            if(i.name == loc)
+                            if (i.name == loc)
                                 element = i;
                         })
 
@@ -121,6 +121,72 @@ function initMap() {
         })
         .catch(err => console.log(err));
 
+    fetch(`http://localhost:3000/clubdb`)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(club => {
+                let rollArray = club.roll_no
+                let meetArray = club.meetings
+                for (let i = 0; i < rollArray.length; i++) {
+                    if (us.RollNo == rollArray[i][i].RollNo) {
+                        for (let j = 0; j < meetArray.length; j++) {
+                            let m = meetArray[j][j]
+                            let today = new Date();
+                            let meetdate = new Date(m.date);
+                            if (today.getTime() <= meetdate.getTime()) {
+                                meets.innerHTML += `
+                            <div id="data">
+                            <img src="./marker100.png" alt="marker">
+                            <div class="details">
+                            <h4 id="sub">${club.name}</h4>
+                            <h4 id="type">at ${m.location}</h4>
+                            <h4 id="loc">on ${m.date} at ${m.time}</h4>
+                            <h4 id="time">${m.agenda}</h4>
+                            </div>
+                            </div>
+                            `
+                                let element
+
+                                fetch('../locations.json')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        data.places.forEach(i => {
+                                            if (i.name == m.location) {
+                                                element = i
+                                            }
+                                        })
+                                        const marker = new google.maps.Marker({
+                                            position: { lat: element.latitude, lng: element.longitude },
+                                            map,
+                                            icon: image,
+                                            shape: shape,
+                                            title: element.name,
+                                            animation: google.maps.Animation.DROP
+                                        });
+
+                                        marker.addListener("click", (e) => {
+                                            const contentString =
+                                                '<div class="info-window-content">' +
+                                                '<h2>' + element.name + '</h2>' +
+                                                '<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
+                                                '</div>';
+
+                                            infoWindow.setContent(contentString);
+                                            infoWindow.open({
+                                                anchor: marker,
+                                                map,
+                                                shouldFocus: false,
+                                            });
+                                        });
+                                    })
+
+                            }
+                        }
+                    }
+                }
+            })
+        })
+        .catch(err => console.log(err))
 }
 
 
@@ -154,41 +220,4 @@ logout.addEventListener('click', () => {
     window.location.href = '../../landing.html';
 });
 
-// NOTIFICATION NHI AA RHA :(
-
-// let notificationTimes = ["17:18:00", "17:19:00"]; // Times in the format of "HH:MM:SS"
-// let notificationInterval = 86400000; // 24 hours in milliseconds
-
-// let i = 0; // Index for the notification times
-
-// // Convert the notification time to a date object
-// let notificationDate = new Date();
-// notificationDate.setHours(notificationTimes[i].split(":")[0]);
-// notificationDate.setMinutes(notificationTimes[i].split(":")[1]);
-// notificationDate.setSeconds(notificationTimes[i].split(":")[2]);
-
-// // Check if the current time is after the notification time
-// let currentDate = new Date();
-// if (currentDate > notificationDate) {
-//     notificationDate.setDate(notificationDate.getDate() + 1);
-// }
-
-// // Schedule the notifications
-// setInterval(() => {
-//     if (Notification.permission === "granted") {
-//         let notification = new Notification("Hello World!");
-//     } else if (Notification.permission !== "denied") {
-//         Notification.requestPermission().then(function (permission) {
-//             if (permission === "granted") {
-//                 let notification = new Notification("Hello World!");
-//             }
-//         });
-//     }
-//     i = (i + 1) % notificationTimes.length; // Increment the index and reset to 0 if it's out of range
-//     notificationDate.setHours(notificationTimes[i].split(":")[0]);
-//     notificationDate.setMinutes(notificationTimes[i].split(":")[1]);
-//     notificationDate.setSeconds(notificationTimes[i].split(":")[2]);
-//     if (currentDate > notificationDate) {
-//         notificationDate.setDate(notificationDate.getDate() + 1);
-//     }
-// }, notificationInterval);
+let meets = document.getElementById('meets');

@@ -2,11 +2,15 @@ GET http://localhost:3000/timetable
 
 ###
 
-GET http://localhost:3000/timetable/Wednesday/CS/A/3
+GET http://localhost:3000/timetable/Monday/CS/A/1
 
 ###
 
-GET http://localhost:3000/timetable/Monday
+GET http://localhost:3000/timetable/Monday/CS/A/1/08_30_00
+
+###
+
+GET http://localhost:3000/timetable/Monday/Dr_Mayank_Dave
 
 ###
 

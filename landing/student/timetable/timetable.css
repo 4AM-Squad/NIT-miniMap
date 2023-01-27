@@ -28,7 +28,7 @@
 	margin-top: 1rem;
 }
 
-.table{
+.table, #meets{
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -48,6 +48,11 @@
 }
 
 .table img{
+	width: 60px;
+	position: relative;
+}
+
+#meets img{
 	width: 60px;
 	position: relative;
 }

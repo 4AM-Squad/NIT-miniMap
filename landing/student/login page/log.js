@@ -40,6 +40,7 @@ function login() {
       } else {
         if (rollbox.value == snapshot.val().RollNo) {
           if (passbox.value == snapshot.val().Password) {
+            localStorage.setItem('role', 'student')
             localStorage.setItem('user', JSON.stringify(snapshot.val()));
             window.location.href = '../student.html';
           } else {

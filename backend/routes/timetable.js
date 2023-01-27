@@ -36,7 +36,16 @@ router.get('/:day/:branch/:section/:subsection/:start_time', async (req, res) =>
 router.get('/:day/:teacher', async (req, res) => {
     try{
         let str = req.params.teacher.replaceAll('_', ' ');
-        const classes = await Timetable.find({day : req.params.day, teacher : str})
+        const classes = await Timetable.find({day : req.params.day, teacher : str}).sort({start_time : 1})
+        res.send(classes)
+    } catch (err){
+        res.status(500).json({message : err.message})
+    }
+})
+
+router.get('/:day', async (req, res) => {
+    try{
+        const classes = await Timetable.find({day : req.params.day}).sort({start_time : 1})
         res.send(classes)
     } catch (err){
         res.status(500).json({message : err.message})

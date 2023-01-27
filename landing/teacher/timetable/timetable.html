@@ -64,9 +64,95 @@
                 <img src="../PFPW.png" alt="ProfilePicture">
             </div>
         </div>
-        <div class="overlay" id="divOne">
+    </div><div class="overlay" id="divOne">
+        <div class="addm">
+            <h1 style="color: white;text-align:center;font-size:56px;margin-bottom:10px ">Add Class</h1>
+            <div style="display: flex; justify-content: center;">
+                <select id="branch_select" style="
+                    background-color: #f9f9f9;
+                    width: 24%;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                      padding: 15px 12px;
+                      margin-right: 5px;
+                  ">
+                    <option value="">Branch</option>
+                    <option value="CS">CS</option>
+                    <option value="IT">IT</option>
+                    <option value="EE">EE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MEC">MEC</option>
+                    <option value="PIE">PIE</option>
+                    <option value="CE">CE</option>
+                </select>
 
+                
+
+                <select id="sub_select" style="
+                    background-color: #f9f9f9;
+                    width: 24%;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    padding: 12px 12x;
+                    margin-left: 5px;
+                    
+                ">
+                    <option style="font-weight: bold;" value="Sub-Section">Sub-Section</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <label style="color: white;font-size:30px;margin-right: 10px;"> Date & Time: </label>
+            <br>
+            <input type="datetime-local" style="width:44%;height:50px; margin-left: 30%; font-size: 2em;display: flex; justify-content: center;"
+                class="date">
+            <br>
+            <br>
+            <label style="color: white;font-size:30px">Location:</label>
+            <select id="branch_select" style="
+                    margin-left: 27%;
+                    background-color: #f9f9f9;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    width:50%;
+                    height:50px;
+                    font-size:15px;
+                    font-weight: bold;
+                  ">
+                <option id="loclist">Location</option>
+                <option id="LHC-101">LHC-101</option>
+                <option id="LHC-102">LHC-102</option>
+                <option id="LHC-103">LHC-103</option>
+                <option id="LHC-104">LHC-104</option>
+                <option id="LHC-105">LHC-105</option>
+                <option id="LHC-201">LHC-201</option>
+                <option id="LHC-202">LHC-202</option>
+                <option id="LHC-203">LHC-203</option>
+                <option id="LHC-204">LHC-204</option>
+                <option id="LHC-205">LHC-205</option>
+                <option id="E-101">E-101</option>
+                <option id="E-102">E-102</option>
+                <option id="E-201">E-201</option>
+                <option id="E-202">E-202</option>                    
+                <option id="L-1">L-1</option>                    
+                <option id="L-2">L-2</option>                    
+                <option id="L-3">L-3</option>                    
+                <option id="L-4">L-4</option>                    
+                <option id="L-5">L-5</option>                    
+                <option id="L-6">L-6</option>                    
+            </select>
+            <!-- <input style="color: rgb(0, 0, 0);height:50px;" type="text" id="inpTask" placeholder="Enter Agenda"><br> -->
+            <br>
+            <button style="margin-left: 43.5%; font-weight: bold;" id="addbtn">Add Class</button>
         </div>
+    </div>
         <script src="timetable.js"></script>
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"

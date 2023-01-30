@@ -32,31 +32,31 @@ function initMap() {
 			data.places.forEach(element => {
 				loclist.innerHTML += `<li><a href="#" onclick="onClickHandler(this)">${element.name}</a></li>`;
 
-				const marker = new google.maps.Marker({
-					position: { lat: element.latitude, lng: element.longitude },
+			const marker = new google.maps.Marker({
+				position: { lat: element.latitude, lng: element.longitude },
+				map,
+				icon: image,
+				shape: shape,
+				title: element.name,
+				animation: google.maps.Animation.DROP
+			});
+	
+			marker.addListener("click", (e) => {
+				const contentString =
+					'<div class="info-window-content">' +
+					'<h2>' + element.name + '</h2>' +
+					`<img src=${element.image}  style="width:400px ;height:300px"/>` +
+					'</div>';
+			
+				infoWindow.setContent(contentString);
+				infoWindow.open({
+					anchor: marker,
 					map,
-					icon: image,
-					shape: shape,
-					title: element.name,
-					animation: google.maps.Animation.DROP
-				});
-
-				marker.addListener("click", (e) => {
-					const contentString =
-						'<div class="info-window-content">' +
-						'<h2>' + element.name + '</h2>' +
-						'<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
-						'</div>';
-
-					infoWindow.setContent(contentString);
-					infoWindow.open({
-						anchor: marker,
-						map,
-						shouldFocus: false,
-					});
+					shouldFocus: false,
 				});
 			});
 		});
+	});
 
 	map.setOptions({ minZoom: 15 });
 

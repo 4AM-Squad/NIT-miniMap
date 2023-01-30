@@ -107,8 +107,8 @@ POST http://localhost:3000/clubdb/
 Content-Type: application/json
 
 {
-    "name": "Industry & Entrepreneurship Cell",
-    "password": "Icell@Techspardha"
+    "name": "Spic",
+    "password": "Spic@Techspardha"
 }
 
 ###

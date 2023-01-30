@@ -22,9 +22,30 @@ router.get('/:day/:branch/:section/:subsection', async (req, res) => {
     }
 })
 
+router.get('/:day/:branch/:section/:subsection/:start_time', async (req, res) => {
+    try{
+        let time = req.params.start_time.replaceAll('_', ':')
+
+        const classes = await Timetable.find({section : req.params.section, subsection : req.params.subsection, day : req.params.day, branch : req.params.branch, start_time : time}).sort({start_time : 1})
+        res.send(classes)
+    } catch (err){
+        res.status(500).json({message : err.message})
+    }
+})
+
+router.get('/:day/:teacher', async (req, res) => {
+    try{
+        let str = req.params.teacher.replaceAll('_', ' ');
+        const classes = await Timetable.find({day : req.params.day, teacher : str}).sort({start_time : 1})
+        res.send(classes)
+    } catch (err){
+        res.status(500).json({message : err.message})
+    }
+})
+
 router.get('/:day', async (req, res) => {
     try{
-        const classes = await Timetable.find({day : req.params.day})
+        const classes = await Timetable.find({day : req.params.day}).sort({start_time : 1})
         res.send(classes)
     } catch (err){
         res.status(500).json({message : err.message})

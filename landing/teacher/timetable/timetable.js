@@ -15,7 +15,7 @@ table = table[0];
 let today = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[today.getDay()];
-const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem('teacher'));
 console.log(user);
 
 function initMap() {
@@ -52,113 +52,39 @@ function initMap() {
             });
         });
 
-    fetch('./timetable.json')
+    let name = user.name.replaceAll(' ', '_');
+    console.log(name)
+    console.log(day)
+    // day = 'Monday';
+    fetch(`http://localhost:3000/timetable/${day}/${name}`)
         .then(response => response.json())
         .then(data => {
-            let arr;
-            if (day == 'Monday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Monday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Monday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Monday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Monday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Tuesday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Tuesday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Tuesday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Tuesday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Tuesday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Wednesday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Wednesday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Wednesday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Wednesday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Wednesday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Thursday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Thursday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Thursday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Thursday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Thursday[0].CS[0].A4;
-                    }
-                }
-            }
-            if (day == 'Friday') {
-                if (user.Branch == 'CS') {
-                    if (user.Subsection == '01') {
-                        arr = data.Friday[0].CS[0].A1;
-                    }
-                    if (user.Subsection == '02') {
-                        arr = data.Friday[0].CS[0].A2;
-                    }
-                    if (user.Subsection == '03') {
-                        arr = data.Friday[0].CS[0].A3;
-                    }
-                    if (user.Subsection == '04') {
-                        arr = data.Friday[0].CS[0].A4;
-                    }
-                }
-            }
-
-            arr.forEach(el => {
+            data.forEach(el => {
                 table.innerHTML += `
-                    <div id="data">
-                        <img src="./marker100.png" alt="marker">
-                        <div class="details">
-                            <h4 id="sub">${el.Subject}</h4>
-                            <h4 id="type">(${el.Type})</h4>
-                            <h4 id="loc">${el.Location}</h4>
-                            <h4 id="time">${el.Time}</h4>
-                        </div>
+                <div id="data">
+                    <img src="./marker100.png" alt="marker">
+                    <div class="details">
+                        <h4 id="sub">${el.subject}</h4>
+                        <h4 id="type">(${el.type})</h4>
+                        <h4 id="branchsec">${el.branch} - ${el.section}${el.subsection}</h4>
+                        <h4 id="loc">${el.location}</h4>
+                        <h4 id="time">${el.start_time} - ${el.end_time}</h4>
+                        <button class="remclass" onclick="removeClass(this)">Remove Class</button>
                     </div>
-                `
+                </div>
+            `
             });
 
-            arr.forEach(el => {
-                let loc = el.Location;
+            data.forEach(el => {
+                let loc = el.location;
                 let element;
                 fetch('../locations.json')
                     .then(response => response.json())
-                    .then(data => {
-
-                        element = data.places.find(el => el.name == loc);
+                    .then(dt => {
+                        dt.places.forEach(i => {
+                            if (i.name == loc)
+                                element = i;
+                        })
 
                         const marker = new google.maps.Marker({
                             position: { lat: element.latitude, lng: element.longitude },
@@ -185,8 +111,7 @@ function initMap() {
                         });
                     });
             });
-        });
-
+        })
 
     infoWindow = new google.maps.InfoWindow({
         content: ""
@@ -209,56 +134,37 @@ function onClickHandler(element) {
 }
 
 let username = document.getElementById('username');
-let userrollno = document.getElementById('userrollno');
 let logout = document.getElementById('logout');
 
-// console.log(JSON.parse(localStorage.user));
-
-// let us = JSON.parse(localStorage.user);
-
-// username.innerHTML = us.Name;
-// userrollno.innerHTML = us.RollNo;
+let teacher = JSON.parse(localStorage.teacher);
+username.innerHTML = teacher.name
 
 logout.addEventListener('click', () => {
-	localStorage.clear();
-	window.location.href = '../../landing.html';
+    localStorage.clear();
+    window.location.href = '../../landing.html';
 });
 
-// NOTIFICATION NHI AA RHA :(
+async function removeClass(element){
+    let classid;
+    const time = element.parentNode.childNodes[9].innerHTML.split(' - ')[0].replaceAll(':', '_')
+    const branch = element.parentNode.childNodes[5].innerHTML.split(' - ')[0]
+    const section = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][0]
+    const subsection = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][1]
+    await fetch(`http://localhost:3000/timetable/${day}/${branch}/${section}/${subsection}/${time}`)
+    .then(response => response.json())
+    .then(data => {
+        classid = data[0]._id;
+        console.log(classid);
+    })
+    .catch(err => console.log(err));
 
-// let notificationTimes = ["17:18:00", "17:19:00"]; // Times in the format of "HH:MM:SS"
-// let notificationInterval = 86400000; // 24 hours in milliseconds
+    await fetch(`http://localhost:3000/timetable/${classid}`, {
+        method : 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 
-// let i = 0; // Index for the notification times
+    window.location.reload();
+}
 
-// // Convert the notification time to a date object
-// let notificationDate = new Date();
-// notificationDate.setHours(notificationTimes[i].split(":")[0]);
-// notificationDate.setMinutes(notificationTimes[i].split(":")[1]);
-// notificationDate.setSeconds(notificationTimes[i].split(":")[2]);
-
-// // Check if the current time is after the notification time
-// let currentDate = new Date();
-// if (currentDate > notificationDate) {
-//     notificationDate.setDate(notificationDate.getDate() + 1);
-// }
-
-// // Schedule the notifications
-// setInterval(() => {
-//     if (Notification.permission === "granted") {
-//         let notification = new Notification("Hello World!");
-//     } else if (Notification.permission !== "denied") {
-//         Notification.requestPermission().then(function (permission) {
-//             if (permission === "granted") {
-//                 let notification = new Notification("Hello World!");
-//             }
-//         });
-//     }
-//     i = (i + 1) % notificationTimes.length; // Increment the index and reset to 0 if it's out of range
-//     notificationDate.setHours(notificationTimes[i].split(":")[0]);
-//     notificationDate.setMinutes(notificationTimes[i].split(":")[1]);
-//     notificationDate.setSeconds(notificationTimes[i].split(":")[2]);
-//     if (currentDate > notificationDate) {
-//         notificationDate.setDate(notificationDate.getDate() + 1);
-//     }
-// }, notificationInterval);

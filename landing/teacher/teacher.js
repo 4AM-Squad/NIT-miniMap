@@ -81,13 +81,9 @@ function onClickHandler(element) {
 
 let username = document.getElementById('username');
 let logout = document.getElementById('logout');
-// console.log(JSON.parse(localStorage.user));
 
 let teacher = JSON.parse(localStorage.teacher);
 username.innerHTML = teacher.name
-
-// username.innerHTML = us.Name;
-// userrollno.innerHTML = us.RollNo;
 
 logout.addEventListener('click', () => {
 	localStorage.clear();
@@ -106,6 +102,7 @@ date.addEventListener('change', async () => {
 	let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	let dayName = daysOfWeek[dayNumber];
 	let time = date.value.split('T')[1].concat(':00');
+	console.log(dayName)
 
 	fetch(`http://localhost:3000/timetable/${dayName}`)
 		.then(response => response.json())
@@ -193,13 +190,15 @@ addbtn.addEventListener('click', async () => {
 		"subsection": sub_select.value
 	}
 
-	// console.log(myClass)
-	fetch('http://localhost:3000/timetable/', {
+	console.log(myClass)
+	await fetch('http://localhost:3000/timetable/', {
 		method: 'POST',
 		body: JSON.stringify(myClass),
 		headers: { 'Content-Type': 'application/json' },
 	})
 		.then(response => response.json())
-		.then(data => console.log(data))
+		.then(data => alert('Class Added'))
 		.catch(error => console.error(error))
+
+	window.location.reload();
 })

@@ -113,16 +113,18 @@ searchmembtn.addEventListener('click', () => {
 	let i=0;
 	if(rolls){
 		for(i=0; i<rolls.length; i++){
-			if(mem == rolls[i][i].RollNo){
-				let user = rolls[i][i]
-				list.innerHTML = `
+			if(rolls[i][i]){
+				if(mem == rolls[i][i].RollNo){
+					let user = rolls[i][i]
+					list.innerHTML = `
 					<div class="meeting">
 					<div class="memberroll">${user.RollNo}</div>
 					<div class="membername">${user.Name}</div>
 					<div class="memberclass">${user.Branch} - ${user.Subsection}</div>
 					</div>
-				`
-				break;
+					`
+					break;
+				}
 			}
 		}
 		if(i==rolls.length)

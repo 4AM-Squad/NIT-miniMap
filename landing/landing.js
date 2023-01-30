@@ -4,11 +4,11 @@ let visitor = document.getElementById('visitor');
 let club = document.getElementById('club');
 let body = document.getElementById('body');
 
-// window.addEventListener('load', () => {
-//     if (localStorage.role) {
-//         window.location.href = `${localStorage.role}/${localStorage.role}.html`;
-//     }
-// });
+window.addEventListener('load', () => {
+    if (localStorage.role) {
+        window.location.href = `${localStorage.role}/${localStorage.role}.html`;
+    }
+});
 
 teacher.addEventListener('click', () => {
     window.location.href = 'teacher/login page/login.html';

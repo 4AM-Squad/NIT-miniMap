@@ -168,3 +168,115 @@ async function removeClass(element){
     window.location.reload();
 }
 
+let date = document.getElementsByClassName('date')[0];
+
+date.addEventListener('change', async () => {
+	for (let i = 1; i < loc_select.childNodes.length; i += 2) {
+		loc_select.childNodes[i].style.background = 'white';
+	}
+
+	let thatdate = new Date(date.value);
+	let dayNumber = thatdate.getDay();
+	let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	let dayName = daysOfWeek[dayNumber];
+	let time = date.value.split('T')[1].concat(':00');
+	console.log(dayName)
+
+	fetch(`http://localhost:3000/timetable/${dayName}`)
+		.then(response => response.json())
+		.then(data => {
+			data.forEach(cls => {
+				if (cls.start_time <= time && time <= cls.end_time) {
+					console.log(cls)
+					let place = cls.location
+					for (let i = 1; i < loc_select.childNodes.length; i += 2) {
+						if (loc_select.childNodes[i].value == place) {
+							loc_select.childNodes[i].style.background = 'red';
+						}
+					}
+				}
+			})
+		})
+})
+
+let addbtn = document.getElementById('addbtn')
+let loc_select = document.getElementById('loc_select');
+let branch_select = document.getElementById('branch_select');
+let sub_select = document.getElementById('sub_select');
+
+addbtn.addEventListener('click', async () => {
+	if (branch_select.value == '') {
+		alert('Select Branch');
+		return false;
+	}
+	if (sub_select.value == '') {
+		alert('Select Subsection');
+		return false;
+	}
+	if (date.value == '') {
+		alert('Select Date');
+		return false;
+	}
+	if (loc_select.value == '') {
+		alert('Select Location');
+		return false;
+	}
+	let thatdate = new Date(date.value);
+	let dayNumber = thatdate.getDay();
+	let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	let dayName = daysOfWeek[dayNumber];
+	let time = date.value.split('T')[1].concat(':00');
+	let sec;
+	if (sub_select.value <= 12)
+		sec = 'C';
+	if (sub_select.value <= 8)
+		sec = 'B';
+	if (sub_select.value <= 4)
+		sec = 'A';
+
+	let timeString = time;
+	let currentDate = new Date();
+	currentDate.setHours(timeString.substr(0, 2));
+	currentDate.setMinutes(timeString.substr(3, 2));
+	currentDate.setSeconds(timeString.substr(6, 2));
+	currentDate.setTime(currentDate.getTime() + (55 * 60 * 1000));
+	let newTimeString = currentDate.toTimeString().substring(0, 8);
+	// console.log(newTimeString); // "12:55:00"
+
+	let sub, flag = true;
+	await fetch(`http://localhost:3000/timetable`)
+		.then(response => response.json())
+		.then(data => {
+			data.forEach(cls => {
+				if (flag && cls.teacher == teacher.name && cls.branch == branch_select.value && cls.section == sec) {
+					sub = cls.subject;
+					flag = false;
+				}
+			})
+		})
+
+	const myClass = {
+		"subject": sub,
+		"type": "Lecture",
+		"location": loc_select.value,
+		"day": dayName,
+		"start_time": time,
+		"end_time": newTimeString,
+		"teacher": teacher.name,
+		"branch": branch_select.value,
+		"section": sec,
+		"subsection": sub_select.value
+	}
+
+	console.log(myClass)
+	await fetch('http://localhost:3000/timetable/', {
+		method: 'POST',
+		body: JSON.stringify(myClass),
+		headers: { 'Content-Type': 'application/json' },
+	})
+		.then(response => response.json())
+		.then(data => alert('Class Added'))
+		.catch(error => console.error(error))
+
+	window.location.reload();
+})

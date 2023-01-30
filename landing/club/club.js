@@ -45,7 +45,7 @@ function initMap() {
 					const contentString =
 						'<div class="info-window-content">' +
 						'<h2>' + element.name + '</h2>' +
-						'<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
+						`<img src=${element.image} style="width:400px ;height:300px"/>` +
 						'</div>';
 
 					infoWindow.setContent(contentString);
@@ -112,7 +112,7 @@ async function getAllMems() {
 getAllMems();
 
 let addmemheading = document.getElementById('addmemheading')
-let loc_set = document.getElementById('branch_select')
+let loc_set = document.getElementById('loc_select')
 let addmeetbtn = document.getElementById('addmeetbtn')
 let date = document.getElementById('date')
 let agenda = document.getElementById('agenda')
@@ -120,13 +120,15 @@ let list1 = document.getElementsByClassName('list1')[0]
 
 
 addmemheading.addEventListener('click', getAllMems)
+
+console.log('hello')
 fetch('./locations.json')
-	.then(response => response.json())
-	.then(data => {
-		data.places.forEach(e => {
-			loc_set.innerHTML += `<option value="${e.name}">${e.name}</option>`
-		})
+.then(response => response.json())
+.then(dt => {
+	dt.places.forEach(e => {
+		loc_set.innerHTML += `<option value="${e.name}">${e.name}</option>`
 	})
+})
 
 addmeetbtn.addEventListener('click', async () => {
 	let meetdate = date.value.split('T')[0]

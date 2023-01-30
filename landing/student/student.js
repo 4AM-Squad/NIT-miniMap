@@ -46,7 +46,7 @@ function initMap() {
 				const contentString =
 					'<div class="info-window-content">' +
 					'<h2>' + element.name + '</h2>' +
-					'<img src="https://www.mystudyindia.com/storage/colleges/medias/aTSlBx_1618989003.webp" style="width: 100%"/>' +
+					`<img src=${element.image} style="width:400px ;height:300px"/>` +
 					'</div>';
 			
 				infoWindow.setContent(contentString);

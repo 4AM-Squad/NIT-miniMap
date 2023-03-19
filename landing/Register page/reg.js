@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAFVePIVi82ZoIcPBA7FstcTFTyzVH4Zjc",
   authDomain: "minimap-9a0ff.firebaseapp.com",

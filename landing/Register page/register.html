@@ -10,7 +10,7 @@
 <body>
 	<img src="logo.png" class="logo">
 	<video autoplay="autoplay" loop muted id="bgvid">
-		<source src="untitled.mov" type="video/mp4">
+		<source src="untitled.mov" type="video/mp4" loop>
 	</video>
 
 	<div class="center">
@@ -67,21 +67,19 @@
 					<option value="12">12</option>
 				</select>
 			</div>
+			
+			<div class="txt_field">
+				<input type="email" id="domainid" style="color:aliceblue" required>
+				<span></span>
+				<label>Domain ID</label>
+			</div>
 
 			<div class="txt_field">
 				<input type="password" id="pass" style="color:aliceblue" required>
 				<span></span>
 				<label>Password</label>
 			</div>
-
-			<!-- <div class="txt_field">
-				<input type="password" style="color:aliceblue" required>
-				<span></span>
-				<label>Confirm Password</label>
-			</div> -->
-			<!-- <div class="pass">Forgot Password?</div> -->
-			<!-- <input type="submit" value="Login"> -->
-			<!-- HTML !-->
+			
 			<div class="btncls">
 				<button id="signUp" class="button-71" role="button">Register</button>
 			</div>
@@ -92,7 +90,7 @@
 		</form>
 	</div>
 
-	<script type="module" src="reg.js"></script>
+	<script src="register.js"></script>
 </body>
 
 </html>

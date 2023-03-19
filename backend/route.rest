@@ -114,3 +114,29 @@ Content-Type: application/json
 ###
 
 DELETE  http://localhost:3000/clubdb/63cf63ac604073bc496dd2a3
+
+### STUDENT'S ROUTES AHEAD
+
+GET http://localhost:3000/studentdb
+
+###
+
+GET http://localhost:3000/studentdb/63cfcb285b0c811aea2d4611
+
+###
+
+POST http://localhost:3000/studentdb/
+Content-Type: application/json
+
+{
+    "name" : "Vansh Sukhija",
+    "password" : "bunsss",
+    "branch" : "CS",
+    "subsection" : 2,
+    "roll_no" : 12112021,
+    "domain_id" : "12112021@nitkkr.ac.in"
+}
+
+###
+
+DELETE  http://localhost:3000/studentdb/63cf63ac604073bc496dd2a3

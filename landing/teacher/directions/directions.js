@@ -1,84 +1,72 @@
-
-// let watchID = navigator.geolocation.watchPosition(handleGetCurrentPosition, handleGetCurrentPositionError, {enableHighAccuracy:true, maximumAge: 0, timeout: 5000});
-
 let latt = 29.947001, lngg = 76.816805;
 
-// window.onload(navigator.geolocation.watchPosition(
-//     function (position) {
-//         latt = position.coords.latitude;
-//         lngg = position.coords.longitude;
-//     },
-//     function (error) {
-//         console.log("Error occurred. Error code: " + error.code);
-//     },
-//     {
-//         enableHighAccuracy: true,
-//         timeout: 5000,
-//         maximumAge: 0
-//     }
-// ));
-
-// function handleGetCurrentPosition(location) {
-//     latt = location.coords.latitude;
-//     lngg = location.coords.longitude;
-//     console.log(location.coords.accuracy);
-//     // document.forms["myform"].submit();
-// }
-
-// function handleGetCurrentPositionError() {
-//     alert("Location could not be found.")
-// }
-
 function initMap() {
-    let directionsService = new google.maps.DirectionsService();
-    let directionsRenderer = new google.maps.DirectionsRenderer();
+	let directionsService = new google.maps.DirectionsService();
+	let directionsRenderer = new google.maps.DirectionsRenderer();
 
-    const map = new google.maps.Map(document.getElementById("map"), {
+	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 16,
 		center: { lat: 29.946076, lng: 76.817682 },
 		mapTypeId: 'satellite'
 	});
 
-    fetch('../locations.json')
-	.then(response => response.json())
-	.then(data => {
-		data.places.forEach(element => {
-			loclist.innerHTML += `<li><a href="#" onclick="onClickHandler(this)">${element.name}</a></li>`;
+	fetch('../locations.json')
+		.then(response => response.json())
+		.then(data => {
+			data.places.forEach(element => {
+				loclist.innerHTML += `<li><a href="#" onclick="onClickHandler(this)">${element.name}</a></li>`;
+			});
 		});
-	});
-    
-    directionsRenderer.setMap(map);
 
-    let origin = new google.maps.LatLng(latt, lngg);
-    let destination = new google.maps.LatLng(localStorage.targetLat, localStorage.targetLng);
+	navigator.geolocation.watchPosition(
+		function (position) {
+			latt = position.coords.latitude;
+			lngg = position.coords.longitude;
+			console.log(position.coords.latitude, position.coords.longitude);
 
-    directionsService.route({
-        origin: origin,
-        destination: destination,
-        travelMode: 'WALKING'
-    }, function (response, status) {
-        if (status === 'OK') {
-            directionsRenderer.setDirections(response);
-        } else {
-            window.alert('Directions request failed due to ' + status);
-        }
-    });
+			directionsRenderer.setMap(map);
+			let origin = new google.maps.LatLng(latt, lngg);
+			let destination = new google.maps.LatLng(localStorage.targetLat, localStorage.targetLng);
 
-    console.log(google.maps.geometry.spherical.computeDistanceBetween(origin, destination));
+			directionsService.route({
+				origin: origin,
+				destination: destination,
+				travelMode: 'WALKING'
+			}, function (response, status) {
+				if (status === 'OK') {
+					console.log(response);
+					directionsRenderer.setDirections(response);
+				} else {
+					window.alert('Directions request failed. Try Again');
+				}
+			},
+				function (error) {
+					console.log("Error occurred. Error code: " + error.code);
+				},
+				{
+					enableHighAccuracy: true,
+					timeout: 5000,
+					maximumAge: 0
+				}
+			)
+
+		});
+
+	// console.log(google.maps.geometry.spherical.computeDistanceBetween(origin, destination));
 }
 
-function onClickHandler(element){
+function onClickHandler(element) {
 	let str = element.innerHTML;
 	let obj;
 
 	fetch('../locations.json')
-	.then(response => response.json())
-	.then(data => {
-		obj = data.places.find(el => el.name == str);
-		localStorage.setItem('targetLat', obj.latitude);
-		localStorage.setItem('targetLng', obj.longitude);
-		location.reload();
-	});
+		.then(response => response.json())
+		.then(data => {
+			obj = data.places.find(el => el.name == str);
+			localStorage.setItem('targetLat', obj.latitude);
+			localStorage.setItem('targetLng', obj.longitude);
+			location.reload();
+		});
 }
 
 let username = document.getElementById('username');
@@ -92,28 +80,28 @@ logout.addEventListener('click', () => {
 	window.location.href = '../../landing.html';
 });
 
-async function removeClass(element){
-    let classid;
-    const time = element.parentNode.childNodes[9].innerHTML.split(' - ')[0].replaceAll(':', '_')
-    const branch = element.parentNode.childNodes[5].innerHTML.split(' - ')[0]
-    const section = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][0]
-    const subsection = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][1]
-    await fetch(`http://localhost:3000/timetable/${day}/${branch}/${section}/${subsection}/${time}`)
-    .then(response => response.json())
-    .then(data => {
-        classid = data[0]._id;
-        console.log(classid);
-    })
-    .catch(err => console.log(err));
+async function removeClass(element) {
+	let classid;
+	const time = element.parentNode.childNodes[9].innerHTML.split(' - ')[0].replaceAll(':', '_')
+	const branch = element.parentNode.childNodes[5].innerHTML.split(' - ')[0]
+	const section = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][0]
+	const subsection = element.parentNode.childNodes[5].innerHTML.split(' - ')[1][1]
+	await fetch(`http://localhost:3000/timetable/${day}/${branch}/${section}/${subsection}/${time}`)
+		.then(response => response.json())
+		.then(data => {
+			classid = data[0]._id;
+			console.log(classid);
+		})
+		.catch(err => console.log(err));
 
-    await fetch(`http://localhost:3000/timetable/${classid}`, {
-        method : 'DELETE'
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+	await fetch(`http://localhost:3000/timetable/${classid}`, {
+		method: 'DELETE'
+	})
+		.then(response => response.json())
+		.then(data => console.log(data))
+		.catch(err => console.log(err));
 
-    window.location.reload();
+	window.location.reload();
 }
 
 let date = document.getElementsByClassName('date')[0];

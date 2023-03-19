@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var cors = require('cors')
+const cors = require('cors')
 const mongoose = require('mongoose');
 
 mongoose.set('strictQuery', true);
@@ -21,5 +21,8 @@ app.use('/teacherdb', teacherRouter)
 
 const clubRouter = require('./routes/club')
 app.use('/clubdb', clubRouter)
+
+const studentRouter = require('./routes/student')
+app.use('/studentdb', studentRouter)
 
 app.listen(3000, () => console.log('Server Started'));

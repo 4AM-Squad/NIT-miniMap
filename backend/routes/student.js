@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
 })
 
 // Getting one
-router.get('/:id', getStudent, async (req, res) => {
+router.get('/:rollno', async (req, res) => {
     try{
-        const stud = await Student.findById(req.params.id)
+        const stud = await Student.find({roll_no : req.params.rollno})
         res.send(stud)
     } catch (err){
         res.status(500).json({message : err.message})
@@ -47,6 +47,14 @@ router.patch('/:id', getStudent, async (req, res) => {
         res.student.name = req.body.name
     if(req.body.password != null)
         res.student.password = req.body.password
+    if(req.body.branch != null)
+        res.student.branch = req.body.branch
+    if(req.body.subsection != null)
+        res.student.subsection = req.body.subsection
+    if(req.body.roll_no != null)
+        res.student.roll_no = req.body.roll_no
+    if(req.body.domain_id != null)
+        res.student.domain_id = req.body.domain_id
 
     try{
         const updatedStudent = await res.student.save()

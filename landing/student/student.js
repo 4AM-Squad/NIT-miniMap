@@ -88,8 +88,8 @@ console.log(JSON.parse(localStorage.user));
 
 let us = JSON.parse(localStorage.user);
 
-username.innerHTML = us.Name;
-userrollno.innerHTML = us.RollNo;
+username.innerHTML = us.name;
+userrollno.innerHTML = us.roll_no;
 
 logout.addEventListener('click', () => {
 	localStorage.clear();

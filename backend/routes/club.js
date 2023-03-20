@@ -92,30 +92,30 @@ async function getClub(req, res, next) {
     next()
 }
 
-router.put("/addRollNo", (req, res) => {
-    const club = req.body;
-    Club.findByIdAndUpdate(club._id, {
-        $push: {
-            roll_no: club.roll_no
-        }
-    }, {
-        new: true
-    }).then((data) => {
-        res.send(data)
-    })
-})
+// router.put("/addRollNo", (req, res) => {
+//     const club = req.body;
+//     Club.findByIdAndUpdate(club._id, {
+//         $push: {
+//             roll_no: club.roll_no
+//         }
+//     }, {
+//         new: true
+//     }).then((data) => {
+//         res.send(data)
+//     })
+// })
 
-router.put("/addMeeting", (req, res) => {
-    const club = req.body;
-    Club.findByIdAndUpdate(club._id, {
-        $push: {
-            meetings: club.meetings
-        }
-    }, {
-        new: true
-    }).then((data) => {
-        res.send(data)
-    })
-})
+// router.put("/addMeeting", (req, res) => {
+//     const club = req.body;
+//     Club.findByIdAndUpdate(club._id, {
+//         $push: {
+//             meetings: club.meetings
+//         }
+//     }, {
+//         new: true
+//     }).then((data) => {
+//         res.send(data)
+//     })
+// })
 
 module.exports = router

@@ -60,6 +60,17 @@ Content-Type: application/json
     "subsection": 4
 }
 
+###
+
+PATCH  http://localhost:3000/timetable/63cd3f1c36726c244b861174
+Content-Type: application/json
+
+{
+    "name": "Industry & Entrepreneurship Cell",
+    "password": "Icell@Techspardha",
+    
+}
+
 ### TEACHER'S ROUTES AHEAD
 
 GET http://localhost:3000/teacherdb
@@ -90,16 +101,6 @@ GET http://localhost:3000/clubdb
 
 GET http://localhost:3000/clubdb/Technobyte
 
-###
-
-PATCH  http://localhost:3000/timetable/63cd3f1c36726c244b861174
-Content-Type: application/json
-
-{
-    "name": "Industry & Entrepreneurship Cell",
-    "password": "Icell@Techspardha",
-    
-}
 
 ###
 
@@ -115,13 +116,23 @@ Content-Type: application/json
 
 DELETE  http://localhost:3000/clubdb/63cf63ac604073bc496dd2a3
 
+###
+
+PATCH http://localhost:3000/clubdb/63d7ed4cdc24337a160417eb
+Content-Type: application/json
+
+{
+    "name": "Spic",
+    "password": "Spic@Techspardha"
+}
+
 ### STUDENT'S ROUTES AHEAD
 
 GET http://localhost:3000/studentdb
 
 ###
 
-GET http://localhost:3000/studentdb/63cfcb285b0c811aea2d4611
+GET http://localhost:3000/studentdb/1211202
 
 ###
 
@@ -140,3 +151,15 @@ Content-Type: application/json
 ###
 
 DELETE  http://localhost:3000/studentdb/63cf63ac604073bc496dd2a3
+
+### OTP ROUTE AHEAD
+
+POST http://localhost:3000/otp/
+Content-Type: application/json
+
+{
+    "from" : "4amsquadhelp@gmail.com",
+    "to" : "tusharkaler450@gmail.com",
+    "subject" : "Test Mail from Nodemailer",
+    "text" : "This is a test mail from the backend of the NIT miniMap server"
+}

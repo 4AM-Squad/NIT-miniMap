@@ -91,24 +91,28 @@
             "image": null
         },
         {
+            "space": 4,
             "name": "E-101",
             "latitude": 29.94701387007738,
             "longitude": 76.8165489313921,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/21-1.jpg"
         },
         {
+            "space": 4,
             "name": "E-102",
             "latitude": 29.94701387007738,
             "longitude": 76.8165489313921,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/21-1.jpg"
         },
         {
+            "space": 4,
             "name": "E-201",
             "latitude": 29.94701387007738,
             "longitude": 76.8165489313921,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/21-1.jpg"
         },
         {
+            "space": 4,
             "name": "E-202",
             "latitude": 29.94701387007738,
             "longitude": 76.8165489313921,
@@ -145,36 +149,42 @@
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/1-2.jpg"
         },
         {
+            "space": 4,
             "name": "L-1",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
             "image": "https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 4,
             "name": "L-2",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
             "image":"https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 4,
             "name": "L-3",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
             "image": "https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 4,
             "name": "L-4",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
             "image": "https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 4,
             "name": "L-5",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
             "image": "https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 4,
             "name": "L-6",
             "latitude": 29.94798919310724,
             "longitude": 76.81531926262228, 
@@ -187,72 +197,84 @@
             "image": "https://i.ytimg.com/vi/_lvBXOYPimY/maxresdefault.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-1",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-2",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-3",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-4",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-5",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-6",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-7",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-8",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-9",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image":"https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-10",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-11",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/EL7.jpg"
         },
         {
+            "space": 2,
             "name": "Lab-12",
             "latitude": 29.947586729757838,
             "longitude": 76.81497696898703,
@@ -277,60 +299,70 @@
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/10-1-1568x580.jpg"
         },
         {
+            "space": 4,
             "name": "LHC-101",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-102",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-103",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-104",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-105",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-201",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-202",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-203",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-204",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
             "image": "https://qph.cf2.quoracdn.net/main-qimg-dd005d2d378350d7de61905f80444a91-pjlq"
         },
         {
+            "space": 4,
             "name": "LHC-205",
             "latitude": 29.944951634903305,
             "longitude": 76.81673505032342,
@@ -355,6 +387,7 @@
             "image": "https://i.ytimg.com/vi/C1sCLYBaCSk/maxresdefault.jpg"
         },
         {
+            "space": 32,
             "name": "Open Air Theatre",
             "latitude": 29.946607, 
             "longitude": 76.818105,
@@ -391,6 +424,7 @@
             "image": "https://i.ytimg.com/vi/c4cmXlX1ogU/mqdefault.jpg"
         },
         {
+            "space": 4,
             "name": "Audio & Visual Aid Centre",
             "latitude": 29.947001,
             "longitude": 76.816805,
@@ -415,6 +449,7 @@
             "image": "https://saenitkurukshetra.in/Imgs/Autokriti4.jpeg"
         },
         {
+            "space": 8,
             "name": "Senate Hall",
             "latitude": 29.94777955844762,
             "longitude": 76.81817997547724,
@@ -499,6 +534,7 @@
             "image": "https://nitkkr.ac.in/wp-content/uploads/2022/03/34-1-1568x580.jpg"
         },
         {
+            "space": 16,
             "name": "Jublee Hall",
             "latitude": 29.946540006373663,
             "longitude": 76.8154236609393,

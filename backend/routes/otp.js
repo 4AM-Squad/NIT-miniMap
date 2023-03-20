@@ -1,32 +1,35 @@
 const express = require('express')
-// const router = express.Router()
+const router = express.Router()
 const nodemailer = require('nodemailer');
-const app = express();
+// const app = express();
 
-let testAccount = nodemailer.createTestAccount();
+// let testAccount = nodemailer.createTestAccount();
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'Gmail',
     port: 587,
     secure: false,
     auth: {
-        user: testAccount.user,
-        pass: testAccount.pass
+        user: '4amsquadhelp@gmail.com',
+        pass: 'psgmvstk'
     }
 });
 
 // define a route for sending emails
-app.post('/otp', (req, res) => {
+router.post('/', (req, res) => {
     // retrieve email data from request body
-    const { from, to, subject, text } = req.body;
+    let from_id = req.body.from;
+    let to_id = req.body.to;
+    let sub = req.body.subject;
+    let msg = req.body.text;
 
     // setup email data with unicode symbols
     const mailOptions = {
-        from,
-        to,
-        subject,
-        text
+        "from" : from_id,
+        "to" : to_id,
+        "subject" : sub,
+        "text" : msg
     };
 
     // send mail with defined transport object
@@ -41,6 +44,7 @@ app.post('/otp', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
+// app.listen(3000, () => {
+//     console.log('Server is running on port 3000');
+// });
+module.exports = router

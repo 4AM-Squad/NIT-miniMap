@@ -1,7 +1,6 @@
 let locations;
 let loclist = document.getElementById('loclist');
 
-
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 16,
@@ -87,6 +86,7 @@ let meets = club.meetings
 
 async function getAllMems() {
 	club = JSON.parse(localStorage.clubuser)
+	memberArray = club.roll_no;
 	list.innerHTML = '';
 	await fetch(`http://localhost:3000/clubdb/${club.name}`)
 		.then(res => res.json())
@@ -94,17 +94,14 @@ async function getAllMems() {
 			data = data[0];
 			memberArray = data.roll_no;
 			console.log(memberArray)
-			let i = -1;
 			memberArray.forEach(elem => {
-				i++;
-				let ele = elem[i]
 				list.innerHTML += `
-				<div class="meeting">
-				<div class="memberroll">${ele.RollNo}</div>
-				<div class="membername">${ele.Name}</div>
-				<div class="memberclass">${ele.Branch} - ${ele.Subsection}</div>
-				</div>
-			`
+					<div class="meeting">
+						<div class="memberroll">${elem.roll_no}</div>
+						<div class="membername">${elem.name}</div>
+						<div class="memberclass">${elem.branch} - ${elem.subsection}</div>
+					</div>
+				`
 			})
 		})
 }
@@ -114,6 +111,7 @@ getAllMems();
 let addmemheading = document.getElementById('addmemheading')
 let loc_set = document.getElementById('loc_select')
 let addmeetbtn = document.getElementById('addmeetbtn')
+let addmembtn = document.getElementById('addmembtn')
 let date = document.getElementById('date')
 let agenda = document.getElementById('agenda')
 let list1 = document.getElementsByClassName('list1')[0]
@@ -121,14 +119,14 @@ let list1 = document.getElementsByClassName('list1')[0]
 
 addmemheading.addEventListener('click', getAllMems)
 
-console.log('hello')
+// console.log('hello')
 fetch('./locations.json')
-.then(response => response.json())
-.then(dt => {
-	dt.places.forEach(e => {
-		loc_set.innerHTML += `<option value="${e.name}">${e.name}</option>`
+	.then(response => response.json())
+	.then(dt => {
+		dt.places.forEach(e => {
+			loc_set.innerHTML += `<option value="${e.name}">${e.name}</option>`
+		})
 	})
-})
 
 addmeetbtn.addEventListener('click', async () => {
 	let meetdate = date.value.split('T')[0]
@@ -136,8 +134,8 @@ addmeetbtn.addEventListener('click', async () => {
 	let dd = meetdate.split('-')[2]
 	let mm = meetdate.split('-')[1]
 	let yy = meetdate.split('-')[0]
-	console.log(meetdate)
-	console.log(meettime)
+	// console.log(meetdate)
+	// console.log(meettime)
 	list1.innerHTML += `
 		<div class="meeting2">
 			<div class="meetdetails">   
@@ -164,19 +162,19 @@ addmeetbtn.addEventListener('click', async () => {
 })
 
 async function changedb(clb) {
-	await fetch(`http://localhost:3000/clubdb/addMeeting`, {
-		method: 'PUT',
+	await fetch(`http://localhost:3000/clubdb/${clb._id}`, {
+		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(clb)
 	})
-	.then(response => response.json())
-	.then(data => {
-		console.log(data)
-		localStorage.removeItem('clubuser');
-		localStorage.setItem('clubuser', JSON.stringify(data))
-	})
+		.then(response => response.json())
+		.then(data => {
+			console.log(data)
+			// localStorage.removeItem('clubuser');
+			localStorage.setItem('clubuser', JSON.stringify(data))
+		})
 }
 
 async function getAllMeets() {
@@ -189,23 +187,20 @@ async function getAllMeets() {
 			data = data[0];
 
 			meetArray = data.meetings;
-			console.log(meetArray)
-			let i = -1;
+			// console.log(meetArray)
 			meetArray.forEach(ele => {
-				// console.log(ele)
-				i++;
-				let meettime = ele[i].time
-				let dd = ele[i].date.split('-')[2]
-				let mm = ele[i].date.split('-')[1]
-				let yy = ele[i].date.split('-')[0]
+				let meettime = ele.time
+				let dd = ele.date.split('-')[2]
+				let mm = ele.date.split('-')[1]
+				let yy = ele.date.split('-')[0]
 				list1.innerHTML += `
 					<div class="meeting2">
 						<div class="meetdetails">   
 							<div class="datetime">${dd}-${mm}-${yy}</div>
 							<div class="datetime2">${meettime}:00</div>
-							<div class="membername">${ele[i].location}</div>
+							<div class="membername">${ele.location}</div>
 						</div>
-						<div class="meetagenda">${ele[i].agenda}</div>
+						<div class="meetagenda">${ele.agenda}</div>
 					</div>
 				`
 			})
@@ -213,3 +208,66 @@ async function getAllMeets() {
 }
 
 getAllMeets()
+
+addmembtn.addEventListener('click', async () => {
+	club = JSON.parse(localStorage.clubuser)
+	list1.innerHTML = '';
+
+	await fetch(`http://localhost:3000/clubdb/${club.name}`)
+		.then(res => res.json())
+		.then(async (data) => {
+			data = data[0];
+			let user = "";
+			memberArray = data.roll_no;
+			console.log(memberArray)
+			let flag = true, flag2 = true;
+			memberArray.forEach(r => {
+				console.log(r);
+				if (r.roll_no == inpmemTask.value)
+					flag = false
+			})
+			if (flag) {
+				await fetch(`http://localhost:3000/studentdb/${inpmemTask.value}`)
+					.then(response => response.json())
+					.then(userdata => {
+						if (userdata.length) {
+							user = userdata[0];
+							flag2 = false
+						}
+					})
+				if (!flag2) {
+					// user = snapshot.val();
+					console.log(user)
+					list.innerHTML += `
+						<div class="meeting">
+						<div class="memberroll">${user.roll_no}</div>
+						<div class="membername">${user.name}</div>
+						<div class="memberclass">${user.branch} - ${user.subsection}</div>
+						</div>
+					`
+					club.roll_no.push(user)
+					console.log(club)
+					changedb(club)
+				} else {
+					alert("User isn't registered");
+				}
+			}
+			else {
+				alert("Member already exists")
+			}
+		})
+})
+
+let logout = document.getElementById('logout');
+logout.addEventListener('click', () => {
+	localStorage.clear();
+	window.location.href = '../landing.html';
+});
+
+let clubname = document.getElementById('clubname');
+clubname.innerHTML = club.name.replaceAll('_', ' ');
+
+// club meetings delete krne ka sochna hai
+// club me members add nhi ho rhe
+// sbhi locations ko space available ke according free dikhana hai
+// css thik krni h

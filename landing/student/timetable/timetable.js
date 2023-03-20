@@ -1,8 +1,4 @@
-/**
- * @license
- * Copyright 2019 Google LLC. All Rights Reserved.
- * SPDX-License-Identifier: Apache-2.0
- */
+
 let locations;
 let loclist = document.getElementById('loclist');
 let sub = document.getElementById('sub');
@@ -55,7 +51,7 @@ function initMap() {
         content: ""
     });
 
-    let subsec = user.Subsection;
+    let subsec = user.subsection;
     subsec = Number(subsec);
     let sec;
     if (subsec <= 12)
@@ -65,7 +61,7 @@ function initMap() {
     if (subsec <= 4)
         sec = 'A';
 
-    fetch(`http://localhost:3000/timetable/${day}/${user.Branch}/${sec}/${subsec}`)
+    fetch(`http://localhost:3000/timetable/${day}/${user.branch}/${sec}/${subsec}`)
         .then(response => response.json())
         .then(data => {
             data.forEach(el => {
@@ -212,8 +208,8 @@ console.log(JSON.parse(localStorage.user));
 
 let us = JSON.parse(localStorage.user);
 
-username.innerHTML = us.Name;
-userrollno.innerHTML = us.RollNo;
+username.innerHTML = us.name;
+userrollno.innerHTML = us.roll_no;
 
 logout.addEventListener('click', () => {
     localStorage.clear();

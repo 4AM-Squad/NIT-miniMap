@@ -15,7 +15,7 @@ teacher.addEventListener('click', () => {
 });
 
 student.addEventListener('click', () => {
-    window.location.href = 'Register page/register.html';
+    window.location.href = 'student/Register page/register.html';
 });
 
 visitor.addEventListener('click', () => {

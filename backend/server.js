@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 const mongoose = require('mongoose');
-// const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb+srv://VanshSukhija:BE**f*TuWR$-V5P@cluster0.ey521ob.mongodb.net/timetable?retryWrites=true&w=majority')
@@ -13,6 +13,12 @@ db.once('open', () => console.log('Connected to Database'))
 
 app.use(cors())
 app.use(express.json())
+
+app.use(express.static(__dirname));
+
+app.get("/",(req,res)=>{
+res.sendFile(__dirname+'./index.html')
+})
 
 const timetableRouter = require('./routes/timetable')
 app.use('/timetable', timetableRouter)
@@ -33,7 +39,7 @@ app.use('/studentdb', studentRouter)
 //     service: 'gmail',
 //     auth: {
 //         user: '4amsquadhelp@gmail.com',
-//         pass: 'psgmvstk'
+//         pass: 'vxzcxxcltdwoyuyy'
 //     }
 // });
  

@@ -24,7 +24,7 @@ function validatePassword() {
     return re.test(passbox.value);
 }
 
-insertbtn.addEventListener("click", (event) => {
+insertbtn.addEventListener("click", async (event) => {
     event.preventDefault();
     if(branchbox.value==""){
         alert("Must select your branch");
@@ -38,7 +38,7 @@ insertbtn.addEventListener("click", (event) => {
         return false;
     }
     if(!validatePassword()){
-        alert("Password is weak");
+        alert("Password is invalid ( must have at least one letter , number and special character with length in 6 to 16)");
         return false;
     }
 
@@ -50,10 +50,8 @@ insertbtn.addEventListener("click", (event) => {
         "domain_id" : domainidbox.value,
         "password" : passbox.value
     }
-
-    localStorage.setItem("user", user);
-
-    // form validation ke baad ek mail id se user ki domain id par otp chla jaye
-    window.location.href = "./otp.html";
-    // otp validate karna hai
+    console.log(user)
+    localStorage.removeItem('user');
+    localStorage.setItem("user", JSON.stringify(user));
+    window.location.href = './otp.html'
 })

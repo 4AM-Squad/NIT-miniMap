@@ -32,11 +32,13 @@ app.use('/clubdb', clubRouter)
 const studentRouter = require('./routes/student')
 app.use('/studentdb', studentRouter)
 
-// const otpRouter = require('./routes/otp')
-// app.use('/otp', otpRouter)
+const otpRouter = require('./routes/otp')
+app.use('/otp', otpRouter)
 
 // let mailTransporter = nodemailer.createTransport({
-//     service: 'gmail',
+//     host: 'smtp.gmail.com',
+//     port: 465,
+//     secure: true,
 //     auth: {
 //         user: '4amsquadhelp@gmail.com',
 //         pass: 'vxzcxxcltdwoyuyy'

@@ -31,7 +31,7 @@
                 <li><a href="../student.html">Explore</a>
                 </li>
                 <li><a href="../timetable/timetable.html">Time-Table</a></li>
-                <li><a class="button" href="#divOne">To-do</a></li>
+                <!-- <li><a class="button" href="#divOne">To-do</a></li> -->
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul id="loclist">
@@ -66,40 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="overlay" id="divOne">
-        <div id="inpContainer">
-            <input type="text" id="inpTask" placeholder="Enter your task here..."><br><br>
 
-            <div class='Alert'>
-                <div class='alertContaner'>
-                    <section class="container">
-                        <div id="clock"></div>
-                        <input style="width: 25%; height: 30px; font-size:larger;" onchange="setAlarmTime(this.value)" name="alarmTime" type="datetime-local">
-                        <div class="controls">
-                            <button onclick="setAlarm()" class="button set-alarm">Set alarm</button>
-                            <button onclick="clearAlarm()" class="button clear-alarm">Clear alarm</button>
-                        </div>
-                    </section>
-
-                </div>
-            </div><br>
-
-            <!-- <button id="updatebtn" onclick="update()">Update Task</button> -->
-            <button id="addbtn" onclick="addtask()">Add Task</button>
-            <button id="clrbtn" onclick="cleartask()">Clear All Tasks</button>
-        </div>
-
-        <div id="emp">
-            <div id="empty">
-                <i class="fa-solid fa-square-check"></i>
-                <span>You have done all your tasks</span><br>
-            </div>
-        </div>
-        <div id="taskContainer"></div>
-
-        <div id="msg">Task Added</div>
-        <script src="https://kit.fontawesome.com/dd13ebace7.js" crossorigin="anonymous"></script>
-    </div>
     <script src="todo.js"></script>
     <script src="directions.js"></script>
     <script src="alarm.js"></script>

@@ -4,6 +4,9 @@
 {
   width: 100%;   
 }
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -359,6 +362,7 @@ button:active {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-bottom:10px;
+  width: 300px;
 }
 
 .button-71:before {

@@ -1,50 +1,39 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer');
-// const app = express();
 
-// let testAccount = nodemailer.createTestAccount();
-
-// create reusable transporter object using the default SMTP transport
-const transporter = nodemailer.createTransport({
-    host: 'Gmail',
-    port: 587,
-    secure: false,
+let mailTransporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
         user: '4amsquadhelp@gmail.com',
-        pass: 'psgmvstk'
+        pass: 'vxzcxxcltdwoyuyy'
     }
 });
 
-// define a route for sending emails
 router.post('/', (req, res) => {
-    // retrieve email data from request body
-    let from_id = req.body.from;
     let to_id = req.body.to;
-    let sub = req.body.subject;
-    let msg = req.body.text;
+    let pass = req.body.otp;
+    let sub = "OTP verification";
+    
+    // let msg = `Your One Time Password for NIT-miniMap is: ${pass}`;
 
-    // setup email data with unicode symbols
-    const mailOptions = {
-        "from" : from_id,
-        "to" : to_id,
-        "subject" : sub,
-        "text" : msg
+    let mailDetails = {
+        from: '4amsquadhelp@gmail.com',
+        to: to_id,
+        subject: sub,
+        // text: msg,
+        html: `<p>Your One Time Password for NIT-miniMap is: <b>${pass}</b></p>`
     };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-            res.status(500).send('Error sending email');
+    mailTransporter.sendMail(mailDetails, function (err, data) {
+        if (err) {
+            res.status(500).json({ message: err.message })
         } else {
-            console.log('Email sent: ' + info.response);
-            res.status(200).send('Email sent successfully');
+            res.status(200).json({ message: `OTP sent to mail ${to_id} successfully`, data: data })
         }
     });
 });
 
-// app.listen(3000, () => {
-//     console.log('Server is running on port 3000');
-// });
 module.exports = router

@@ -56,6 +56,8 @@ router.patch('/:id', getClub, async (req, res) => {
         res.club.password = req.body.password
     if (req.body.meetings != null)
         res.club.meetings = req.body.meetings
+    if (req.body.roll_no != null)
+        res.club.roll_no = req.body.roll_no
     if (req.body.events != null)
         res.club.events = req.body.events
 

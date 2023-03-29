@@ -1,6 +1,5 @@
 let locations;
 let loclist = document.getElementById('loclist');
-
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 16,
@@ -93,13 +92,20 @@ async function getAllMems() {
 		.then(data => {
 			data = data[0];
 			memberArray = data.roll_no;
-			console.log(memberArray)
+			memberArray.sort(function (a, b) {
+				if (a.roll_no > b.roll_no) return 1;
+				else return -1;
+			})
 			memberArray.forEach(elem => {
+
 				list.innerHTML += `
 					<div class="meeting">
 						<div class="memberroll">${elem.roll_no}</div>
 						<div class="membername">${elem.name}</div>
 						<div class="memberclass">${elem.branch} - ${elem.subsection}</div>
+						<div id="${elem.roll_no}">
+							<button class="delete" onclick="removeClass(${elem.roll_no})">Remove</button>
+						</div>
 					</div>
 				`
 			})
@@ -134,8 +140,6 @@ addmeetbtn.addEventListener('click', async () => {
 	let dd = meetdate.split('-')[2]
 	let mm = meetdate.split('-')[1]
 	let yy = meetdate.split('-')[0]
-	// console.log(meetdate)
-	// console.log(meettime)
 	list1.innerHTML += `
 		<div class="meeting2">
 			<div class="meetdetails">   
@@ -160,22 +164,6 @@ addmeetbtn.addEventListener('click', async () => {
 	date.value = ''
 	agenda.value = ''
 })
-
-async function changedb(clb) {
-	await fetch(`http://localhost:3000/clubdb/${clb._id}`, {
-		method: 'PATCH',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(clb)
-	})
-		.then(response => response.json())
-		.then(data => {
-			console.log(data)
-			// localStorage.removeItem('clubuser');
-			localStorage.setItem('clubuser', JSON.stringify(data))
-		})
-}
 
 async function getAllMeets() {
 	club = JSON.parse(localStorage.clubuser)
@@ -219,10 +207,8 @@ addmembtn.addEventListener('click', async () => {
 			data = data[0];
 			let user = "";
 			memberArray = data.roll_no;
-			console.log(memberArray)
 			let flag = true, flag2 = true;
 			memberArray.forEach(r => {
-				console.log(r);
 				if (r.roll_no == inpmemTask.value)
 					flag = false
 			})
@@ -236,18 +222,19 @@ addmembtn.addEventListener('click', async () => {
 						}
 					})
 				if (!flag2) {
-					// user = snapshot.val();
-					console.log(user)
 					list.innerHTML += `
-						<div class="meeting">
+					<div class="meeting">
 						<div class="memberroll">${user.roll_no}</div>
 						<div class="membername">${user.name}</div>
 						<div class="memberclass">${user.branch} - ${user.subsection}</div>
+						<div id="${user.roll_no}">
+							<button class="delete" onclick="removeClass(${user.roll_no})">Remove</button>
 						</div>
+					</div>
 					`
 					club.roll_no.push(user)
-					console.log(club)
 					changedb(club)
+
 				} else {
 					alert("User isn't registered");
 				}
@@ -256,7 +243,45 @@ addmembtn.addEventListener('click', async () => {
 				alert("Member already exists")
 			}
 		})
+	inpmemTask.value = '';
 })
+
+searchmembtn.addEventListener('click', () => {
+	let mem = inpmemTask.value
+	inpmemTask.value = ''
+	let i = 0;
+	for (i = 0; i < memberArray.length; i++) {
+		if (mem == memberArray[i].roll_no) {
+			let user = memberArray[i]
+			list.innerHTML = `
+				<div class="meeting">
+					<div class="memberroll">${user.roll_no}</div>
+					<div class="membername">${user.name}</div>
+					<div class="memberclass">${user.branch} - ${user.subsection}</div>
+				</div>
+			`
+			break;
+		}
+	}
+	if (i == memberArray.length)
+		alert(`Member doesn't exist`)
+})
+
+async function changedb(clb) {
+	await fetch(`http://localhost:3000/clubdb/${clb._id}`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(clb)
+	})
+		.then(response => response.json())
+		.then(data => {
+			console.log(data)
+			// localStorage.removeItem('clubuser');
+			localStorage.setItem('clubuser', JSON.stringify(data))
+		})
+}
 
 let logout = document.getElementById('logout');
 logout.addEventListener('click', () => {
@@ -267,7 +292,36 @@ logout.addEventListener('click', () => {
 let clubname = document.getElementById('clubname');
 clubname.innerHTML = club.name.replaceAll('_', ' ');
 
+async function cancelbtn(elem) {
+	let canl = document.getElementById(elem);
+	canl.innerHTML = `<button class="delete" onclick="removeClass(${elem})">Remove</button>`
+}
+async function removeClass(element) {
+	element = "" + element;
+	let del1 = document.getElementById(element);
+	del1.innerHTML =
+	`
+		<button class="cdelete" onclick="removeMem(${element})">Confirm Remove</button>
+		<button class="cancel" onclick="cancelbtn(${element})">Cancel</button>
+	`
+}
+
+async function removeMem(roll){
+	for(let i=0; i<memberArray.length; i++){
+		if(memberArray[i].roll_no==roll){
+			memberArray.splice(i, 1);
+			break;
+		}
+	}
+	club = JSON.parse(localStorage.getItem('clubuser'));
+	club.roll_no = memberArray
+	changedb(club);
+	window.location.reload();
+}
+
+
+
+
 // club meetings delete krne ka sochna hai
-// club me members add nhi ho rhe
 // sbhi locations ko space available ke according free dikhana hai
 // css thik krni h

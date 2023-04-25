@@ -125,7 +125,6 @@ let list1 = document.getElementsByClassName('list1')[0]
 
 addmemheading.addEventListener('click', getAllMems)
 
-// console.log('hello')
 fetch('./locations.json')
 	.then(response => response.json())
 	.then(dt => {
@@ -175,7 +174,6 @@ async function getAllMeets() {
 			data = data[0];
 
 			meetArray = data.meetings;
-			// console.log(meetArray)
 			meetArray.forEach(ele => {
 				let meettime = ele.time
 				let dd = ele.date.split('-')[2]
@@ -278,7 +276,6 @@ async function changedb(clb) {
 		.then(response => response.json())
 		.then(data => {
 			console.log(data)
-			// localStorage.removeItem('clubuser');
 			localStorage.setItem('clubuser', JSON.stringify(data))
 		})
 }
@@ -318,9 +315,6 @@ async function removeMem(roll){
 	changedb(club);
 	window.location.reload();
 }
-
-
-
 
 // club meetings delete krne ka sochna hai
 // sbhi locations ko space available ke according free dikhana hai

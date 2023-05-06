@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="marker.ico" type="image/x-icon">
     <link rel="stylesheet" href="alarm.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -20,15 +22,15 @@
             <a href="./student.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <i class='bx bx-menu' id="menu"></i>
+            <nav class="navbar" id="navbarid">
                 <li><a href="./student.html">Explore</a>
                 </li>
                 <li><a href="./timetable/timetable.html">Time-Table</a></li>
-                <!-- <li><a class="button" href="#divTwo">Club Meets</a></li> -->
                 <!-- <li><a class="button" href="#divOne">To-do</a></li> -->
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -50,7 +52,7 @@
                         </a>
                     </div>
                 </li>
-            </ul>
+            </nav>
             <div class="useridblock">
                 <div class="userdetails">
                     <div id="username"></div>

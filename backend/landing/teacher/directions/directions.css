@@ -630,3 +630,42 @@ body {
 	color: #0073ff;
 	cursor: pointer;
 }
+
+
+/* Responsive navbar */
+
+@media (min-width:1000px) {
+    #menu {
+        display: none;
+    }
+}
+
+@media (max-width:1000px) {
+    #menu {
+        font-size: 4vw;
+        scale: 2;
+        display: block;
+		color: #e7e7e7;
+    }
+	#navbarid {
+		display: none;
+	}
+	
+    #navbarid.active {
+		display: flex;
+		flex-direction: column;
+		top: 100%;
+        left: 0%;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: #181b20;
+		position: absolute;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        /* margin: 2rem 0%; */
+        padding: 2%;
+    }
+}

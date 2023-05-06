@@ -3,11 +3,13 @@
 
 <head>
     <title>Teacher Timetable</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="timetable.css">
     <link rel="shortcut icon" href="../marker.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -24,7 +26,8 @@
             <a href="../teacher.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <i class='bx bx-menu' id="menu"></i>
+            <ul id="navbarid">
                 <li><a href="../teacher.html">Explore</a>
                 </li>
                 <li><a href="./timetable.html">Time-Table<i class="fas fa-time"></i></a></li>
@@ -32,7 +35,7 @@
 
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -64,7 +67,8 @@
                 <img src="../PFPW.png" alt="ProfilePicture">
             </div>
         </div>
-    </div><div class="overlay" id="divOne">
+    </div>
+    <div class="overlay" id="divOne">
         <div class="addm">
             <h1 style="color: white;text-align:center;font-size:56px;margin-bottom:10px ">Add Class</h1>
             <div style="display: flex; justify-content: center;">
@@ -85,7 +89,7 @@
                     <option value="CE">CE</option>
                 </select>
 
-                
+
 
                 <select id="sub_select" style="
                     background-color: #f9f9f9;
@@ -112,7 +116,8 @@
             </div>
             <label style="color: white;font-size:30px;margin-right: 10px;"> Date & Time: </label>
             <br>
-            <input type="datetime-local" style="width:44%;height:50px; margin-left: 30%; font-size: 2em;display: flex; justify-content: center;"
+            <input type="datetime-local"
+                style="width:44%;height:50px; margin-left: 30%; font-size: 2em;display: flex; justify-content: center;"
                 class="date">
             <br>
             <br>
@@ -158,18 +163,27 @@
                 <option value="Lab-9">Lab-9</option>
                 <option value="Lab-10">Lab-10</option>
                 <option value="Lab-11">Lab-11</option>
-                <option value="Lab-12">Lab-12</option>                  
+                <option value="Lab-12">Lab-12</option>
             </select>
             <!-- <input style="color: rgb(0, 0, 0);height:50px;" type="text" id="inpTask" placeholder="Enter Agenda"><br> -->
             <br>
             <button style="margin-left: 43.5%; font-weight: bold;" id="addbtn">Add Class</button>
         </div>
     </div>
-        <script src="timetable.js"></script>
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-            defer>
-            </script>
+    <script src="timetable.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
+        defer>
+        </script>
+    <script>
+        let navb = document.querySelector('#menu');
+        let navbar = document.querySelector('#navbarid');
+
+        navb.onclick = () => {
+            navb.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
 </body>
 
 </html>

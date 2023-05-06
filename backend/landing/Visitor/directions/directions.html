@@ -13,6 +13,8 @@
         </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcut icon" href="../marker.ico" type="image/x-icon">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -25,7 +27,9 @@
             <a href="../visitor.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <i class='bx bx-menu' id="menu"></i>
+
+            <ul id="navbarid">
                 <li><a href="../visitor.html">Explore</a>
                 </li>
                 <!-- <li><a href="../visitor.html">Virtual Tour</a>
@@ -35,7 +39,7 @@
                 </li>
                 <li><a href="#">Go-to <i class="fa fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -69,6 +73,15 @@
         </div>
     </div>
     <script src="directions.js"></script>
+    <script>
+        let navb = document.querySelector('#menu');
+let navbar = document.querySelector('#navbarid');
+
+navb.onclick = () => {
+    navb.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+    </script>
 </body>
 
 </html>

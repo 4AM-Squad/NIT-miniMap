@@ -96,3 +96,15 @@ logout.addEventListener('click', () => {
 	window.location.href = '../landing.html';
 });
 
+
+
+
+/* Responsive navbar */
+
+let navb = document.querySelector('#menu');
+let navbar = document.querySelector('#navbarid');
+
+navb.onclick = () => {
+    navb.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};

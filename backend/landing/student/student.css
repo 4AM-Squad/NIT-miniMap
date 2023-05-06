@@ -34,7 +34,7 @@ body {
 
 .logo {
 	color: var(--color-white);
-	font-size: 30px;
+	font-size: 4vh;
 }
 
 .logo span {
@@ -52,18 +52,18 @@ body {
 	position: fixed;
 }
 
-.menu-bar ul {
+.menu-bar nav {
 	list-style: none;
 	display: flex;
 }
 
-.menu-bar ul li {
+.menu-bar nav li {
 	padding: 10px 30px;
 	position: relative;
 }
 
-.menu-bar ul li a {
-	font-size: 20px;
+.menu-bar nav li a {
+	font-size: 3vh;
 	color: var(--color-white);
 	text-decoration: none;
 	transition: all 0.3s;
@@ -79,7 +79,7 @@ body {
 	background: #403e3d;
 	border-radius: 50px;
 }
-.menu-bar ul li a:hover {
+.menu-bar nav li a:hover {
 	color: var(--color-primary);
 }
 
@@ -90,7 +90,7 @@ body {
 	height: 50vh;
 }
 
-.menu-bar ul li:hover .dropdown-menu {
+.menu-bar nav li:hover .dropdown-menu {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -98,12 +98,12 @@ body {
 	background-color: var(--color-black);
 }
 
-.menu-bar ul li:hover .dropdown-menu ul {
+.menu-bar nav li:hover .dropdown-menu nav {
 	display: block;
 	margin: 10px;
 }
 
-.menu-bar ul li:hover .dropdown-menu ul li {
+.menu-bar nav li:hover .dropdown-menu nav li {
 	width: 150px;
 	padding: 10px;
 }
@@ -112,7 +112,7 @@ body {
 	display: none;
 }
 
-.dropdown-menu ul li:hover .dropdown-menu-1 {
+.dropdown-menu nav li:hover .dropdown-menu-1 {
 	display: block;
 	position: absolute;
 	left: 150px;
@@ -129,7 +129,7 @@ body {
 	width: 190px;
 	padding: 10px 40px;
 }
-.menu-bar ul li:hover .dropdown-menu1 {
+.menu-bar nav li:hover .dropdown-menu1 {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -137,17 +137,17 @@ body {
 	background-color: var(--color-black);
 }
 
-.menu-bar ul li:hover .dropdown-menu1 ul {
+.menu-bar nav li:hover .dropdown-menu1 nav {
 	display: block;
 	margin: 10px;
 }
 
-.menu-bar ul li:hover .dropdown-menu1 ul li {
+.menu-bar nav li:hover .dropdown-menu1 nav li {
 	width: 150px;
 	padding: 10px;
 }
 
-.dropdown-menu1 ul li:hover .dropdown-menu-1 {
+.dropdown-menu1 nav li:hover .dropdown-menu-1 {
 	display: block;
 	position: absolute;
 	left: 150px;
@@ -401,7 +401,7 @@ body {
 
 .logo {
 	color: var(--color-white);
-	font-size: 30px;
+	/* font-size: 30px; */
 	cursor: pointer;
 }
 
@@ -420,25 +420,25 @@ body {
 	position: fixed;
 }
 
-.menu-bar ul {
+.menu-bar nav {
 	list-style: none;
 	display: flex;
 }
 
-.menu-bar ul li {
+.menu-bar nav li {
 	padding: 10px 30px;
 	position: relative;
 }
 
-.menu-bar ul li a {
-	font-size: 20px;
+.menu-bar nav li a {
+	/* font-size: 20px; */
 	color: var(--color-white);
 	text-decoration: none;
 
 	transition: all 0.3s;
 }
 
-.menu-bar ul li a:hover {
+.menu-bar nav li a:hover {
 	color: var(--color-primary);
 }
 
@@ -455,7 +455,7 @@ body {
 	height: 50vh;
 }
 
-.menu-bar ul li:hover .dropdown-menu {
+.menu-bar nav li:hover .dropdown-menu {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -463,12 +463,12 @@ body {
 	background-color: var(--color-black);
 }
 
-.menu-bar ul li:hover .dropdown-menu ul {
+.menu-bar nav li:hover .dropdown-menu nav {
 	display: block;
 	margin: 10px;
 }
 
-.menu-bar ul li:hover .dropdown-menu ul li {
+.menu-bar nav li:hover .dropdown-menu nav li {
 	width: 150px;
 	padding: 10px;
 }
@@ -477,7 +477,7 @@ body {
 	display: none;
 }
 
-.dropdown-menu ul li:hover .dropdown-menu-1 {
+.dropdown-menu nav li:hover .dropdown-menu-1 {
 	display: block;
 	position: absolute;
 	left: 150px;
@@ -528,3 +528,55 @@ body {
     align-items: center; */
 /* } */
 
+
+#logout
+{
+	font-size: 2vh;
+}
+#userrollno
+{
+	font-size: 2vh;
+}
+#username
+{
+	font-size: 2vh;
+}
+
+
+/* Responsive navbar */
+
+@media (min-width:1000px) {
+    #menu {
+        display: none;
+    }
+}
+
+@media (max-width:1000px) {
+    #menu {
+        font-size: 4vw;
+        scale: 2;
+        display: block;
+		color: #e7e7e7;
+    }
+	#navbarid {
+		display: none;
+	}
+	
+    #navbarid.active {
+		display: flex;
+		flex-direction: column;
+		top: 100%;
+        left: 0%;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: #181b20;
+		position: absolute;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        /* margin: 2rem 0%; */
+        padding: 2%;
+    }
+}

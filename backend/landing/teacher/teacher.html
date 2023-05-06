@@ -6,6 +6,8 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="teacher.css">
     <link rel="shortcut icon" href="marker.ico" type="image/x-icon">
 </head>
@@ -19,7 +21,9 @@
             <a href="./teacher.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <i class='bx bx-menu' id="menu"></i>
+
+            <ul id="navbarid">
                 <li><a href="./teacher.html">Explore</a>
                 </li>
                 <li><a href="./timetable/timetable.html">Time-Table<i class="fas fa-time"></i></a></li>
@@ -27,7 +31,7 @@
 
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -159,6 +163,15 @@
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
             defer>
+            </script>
+            <script>
+                let navb = document.querySelector('#menu');
+        let navbar = document.querySelector('#navbarid');
+        
+        navb.onclick = () => {
+            navb.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
             </script>
 </body>
 

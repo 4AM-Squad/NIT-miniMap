@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="timetable.css">
     <link rel="stylesheet" href="alarm.css">
     <link rel="shortcut icon" href="../marker.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -32,13 +34,14 @@
             <a href="../student.html">
                 <h1 class="logo">NIT<span>miniMap.</span></h1>
             </a>
-            <ul>
+            <i class='bx bx-menu' id="menu"></i>
+            <ul id="navbarid">
                 <li><a href="../student.html">Explore</a></li>
                 <li><a href="./timetable.html">Time-Table</a></li>
                 <!-- <li><a class="button" href="#divOne">To-do</a></li> -->
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -74,10 +77,16 @@
     <script src="todo.js"></script>
     <script src="timetable.js"></script>
     <script src="alarm.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-        defer>
-        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
+        defer></script>
+    <script>
+        let navb = document.querySelector('#menu');
+        let navbar = document.querySelector('#navbarid');
+        navb.onclick = () => {
+            navb.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
 </body>
 
 </html>

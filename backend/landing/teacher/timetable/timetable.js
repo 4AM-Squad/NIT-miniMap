@@ -13,27 +13,35 @@ let day = days[today.getDay()];
 const user = JSON.parse(localStorage.getItem('teacher'));
 console.log(user);
 
+function loadGoogleMaps(url) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.defer = true;
+    script.async = true;
+    document.head.appendChild(script);
+    console.log('Google Maps API loaded')
+}
+
+fetch('http://localhost:3000/apiurl')
+    .then(response => response.json())
+    .then(data => {
+        loadGoogleMaps(data.apiURL);
+    })
+
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 17,
+        zoom: 16,
         center: { lat: 29.946076, lng: 76.817682 },
         mapTypeId: 'satellite'
     });
 
-    map.setOptions({ minZoom: 16 });
-
     const image = {
-        url: "../marker.png",
-        // This marker is 20 pixels wide by 32 pixels high.
+        url: "marker.png",
         size: new google.maps.Size(20, 32),
-        // The origin for this image is (0, 0).
         origin: new google.maps.Point(0, 0),
-        // The anchor for this image is the base of the flagpole at (0, 32).
         anchor: new google.maps.Point(0, 32),
     };
-    // Shapes define the clickable region of the icon. The type defines an HTML
-    // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-    // The final coordinate closes the poly by connecting to the first coordinate.
+
     const shape = {
         coords: [1, 1, 1, 20, 18, 20, 18, 1],
         type: "poly",
@@ -48,9 +56,7 @@ function initMap() {
         });
 
     let name = user.name.replaceAll(' ', '_');
-    console.log(name)
-    console.log(day)
-    // day = 'Monday';
+
     fetch(`http://localhost:3000/timetable/${day}/${name}`)
         .then(response => response.json())
         .then(data => {
@@ -149,7 +155,6 @@ async function removeClass(element) {
         .then(response => response.json())
         .then(data => {
             classid = data[0]._id;
-            console.log(classid);
         })
         .catch(err => console.log(err));
 
@@ -175,7 +180,6 @@ date.addEventListener('change', async () => {
     let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let dayName = daysOfWeek[dayNumber];
     let time = date.value.split('T')[1].concat(':00');
-    console.log(dayName)
 
     fetch(`http://localhost:3000/timetable/${dayName}`)
         .then(response => response.json())
@@ -236,7 +240,6 @@ addbtn.addEventListener('click', async () => {
     currentDate.setSeconds(timeString.substr(6, 2));
     currentDate.setTime(currentDate.getTime() + (55 * 60 * 1000));
     let newTimeString = currentDate.toTimeString().substring(0, 8);
-    // console.log(newTimeString); // "12:55:00"
 
     let sub, flag = true;
     await fetch(`http://localhost:3000/timetable`)
@@ -263,7 +266,6 @@ addbtn.addEventListener('click', async () => {
         "subsection": sub_select.value
     }
 
-    console.log(myClass)
     await fetch('http://localhost:3000/timetable/', {
         method: 'POST',
         body: JSON.stringify(myClass),

@@ -1,5 +1,21 @@
 let locations;
 let loclist = document.getElementById('loclist');
+
+function loadGoogleMaps(url) {
+	const script = document.createElement('script');
+	script.src = url;
+	script.defer = true;
+	script.async = true;
+	document.head.appendChild(script);
+	console.log('Google Maps API loaded')
+}
+
+fetch('http://localhost:3000/apiurl')
+	.then(response => response.json())
+	.then(data => {
+		loadGoogleMaps(data.apiURL);
+	})
+
 function initMap() {
 	const map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 16,
@@ -9,16 +25,11 @@ function initMap() {
 
 	const image = {
 		url: "marker.png",
-		// This marker is 20 pixels wide by 32 pixels high.
 		size: new google.maps.Size(20, 32),
-		// The origin for this image is (0, 0).
 		origin: new google.maps.Point(0, 0),
-		// The anchor for this image is the base of the flagpole at (0, 32).
 		anchor: new google.maps.Point(0, 32),
 	};
-	// Shapes define the clickable region of the icon. The type defines an HTML
-	// <area> element 'poly' which traces out a polygon as a series of X,Y points.
-	// The final coordinate closes the poly by connecting to the first coordinate.
+
 	const shape = {
 		coords: [1, 1, 1, 20, 18, 20, 18, 1],
 		type: "poly",
@@ -297,15 +308,15 @@ async function removeClass(element) {
 	element = "" + element;
 	let del1 = document.getElementById(element);
 	del1.innerHTML =
-	`
+		`
 		<button class="cdelete" onclick="removeMem(${element})">Confirm Remove</button>
 		<button class="cancel" onclick="cancelbtn(${element})">Cancel</button>
 	`
 }
 
-async function removeMem(roll){
-	for(let i=0; i<memberArray.length; i++){
-		if(memberArray[i].roll_no==roll){
+async function removeMem(roll) {
+	for (let i = 0; i < memberArray.length; i++) {
+		if (memberArray[i].roll_no == roll) {
 			memberArray.splice(i, 1);
 			break;
 		}

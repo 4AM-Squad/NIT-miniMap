@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="directions.css">
     <title>NIT miniMap Directions</title>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-        defer>
-        </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../marker.ico" type="image/x-icon">
@@ -32,12 +28,11 @@
             <ul class="navbar" id="navbarid">
                 <li><a href="../club.html">Explore</a>
                 </li>
-                <!-- <li><a href="../timetable/timetable.html">Time-Table<i class="fas fa-time"></i></a></li> -->
                 <li><a class="button" href="#divOne">Club Meetings</i></a></li>
                 <li><a class="button" href="#divtwo">Member Info.</i></a></li>
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu"style="z-index: 1;">
+                    <div class="dropdown-menu" style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -114,12 +109,12 @@
     <script src="directions.js"></script>
     <script>
         let navb = document.querySelector('#menu');
-let navbar = document.querySelector('#navbarid');
+        let navbar = document.querySelector('#navbarid');
 
-navb.onclick = () => {
-    navb.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+        navb.onclick = () => {
+            navb.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
     </script>
 </body>
 

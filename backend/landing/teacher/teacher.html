@@ -31,7 +31,7 @@
 
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu"style="z-index: 1;">
+                    <div class="dropdown-menu" style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -160,19 +160,15 @@
             </div>
         </div>
         <script src="teacher.js"></script>
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-            defer>
-            </script>
-            <script>
-                let navb = document.querySelector('#menu');
-        let navbar = document.querySelector('#navbarid');
-        
-        navb.onclick = () => {
-            navb.classList.toggle('bx-x');
-            navbar.classList.toggle('active');
-        };
-            </script>
+        <script>
+            let navb = document.querySelector('#menu');
+            let navbar = document.querySelector('#navbarid');
+
+            navb.onclick = () => {
+                navb.classList.toggle('bx-x');
+                navbar.classList.toggle('active');
+            };
+        </script>
 </body>
 
 </html>

@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
-<html>
 
 <head>
     <title>Student Timetable</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="timetable.css">
-    <link rel="stylesheet" href="alarm.css">
     <link rel="shortcut icon" href="../marker.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <body>
@@ -41,7 +33,7 @@
                 <!-- <li><a class="button" href="#divOne">To-do</a></li> -->
                 <li><a href="#">Go-to <i class="fas fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu"style="z-index: 1;">
+                    <div class="dropdown-menu" style="z-index: 1;">
                         <ul id="loclist">
                         </ul>
                     </div>
@@ -74,11 +66,7 @@
             </div>
         </div>
     </div>
-    <script src="todo.js"></script>
     <script src="timetable.js"></script>
-    <script src="alarm.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-        defer></script>
     <script>
         let navb = document.querySelector('#menu');
         let navbar = document.querySelector('#navbarid');

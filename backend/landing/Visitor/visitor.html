@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Visitors</title>
+    <title>Visitor</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="visitors.css">
@@ -31,8 +31,8 @@
                 </li>
                 <li><a href="#">Go-to <i class="fa fa-caret-down"></i></a>
 
-                    <div class="dropdown-menu"style="z-index: 1;">
-                        <ul id="loclist" >
+                    <div class="dropdown-menu" style="z-index: 1;">
+                        <ul id="loclist">
                         </ul>
                     </div>
                 </li>
@@ -56,8 +56,6 @@
             </ul>
             <div class="useridblock">
                 <div class="userdetails">
-                    <!-- <h2>GUEST</h2> -->
-                    <!-- <br> -->
                     <div id="logout"><a href="../landing.html"><img src="./back.png"></a></div>
                 </div>
                 <img src="./PFPW.png" alt="ProfilePicture">
@@ -65,20 +63,17 @@
         </div>
     </div>
     <script src="visitors.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEWNZpNeH6lB69NDndISiyzqJ4V_on0I&callback=initMap&v=weekly"
-        defer>
-        </script>
-        <script>
-            let navb = document.querySelector('#menu');
-    let navbar = document.querySelector('#navbarid');
-    
-    navb.onclick = () => {
-        navb.classList.toggle('bx-x');
-        navbar.classList.toggle('active');
-    };
-        </script>
+    <script>
+        let navb = document.querySelector('#menu');
+        let navbar = document.querySelector('#navbarid');
+
+        navb.onclick = () => {
+            navb.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
 </body>
 
 </html>
+
 </html>

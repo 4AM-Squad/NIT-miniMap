@@ -8,11 +8,11 @@ let insertbtn = document.getElementById("signUp");
 
 function validateDomainID(domain) {
     let str = String(rollbox.value)
-    if(!domain.includes(str)){
+    if (!domain.includes(str)) {
         alert("Roll Number and Domain ID doesn't match");
         return false;
     }
-    if(!domain.includes("@nitkkr.ac.in")){
+    if (!domain.includes("@nitkkr.ac.in")) {
         alert("Enter valid domain id");
         return false;
     }
@@ -26,29 +26,29 @@ function validatePassword() {
 
 insertbtn.addEventListener("click", async (event) => {
     event.preventDefault();
-    if(branchbox.value==""){
+    if (branchbox.value == "") {
         alert("Must select your branch");
         return false;
     }
-    if(subbox.value==""){
+    if (subbox.value == "") {
         alert("Must select your subsection");
         return false;
     }
-    if(!validateDomainID(domainidbox.value)){
+    if (!validateDomainID(domainidbox.value)) {
         return false;
     }
-    if(!validatePassword()){
+    if (!validatePassword()) {
         alert("Password is invalid ( must have at least one letter , number and special character with length in 6 to 16)");
         return false;
     }
 
     let user = {
-        "name" : namebox.value,
-        "roll_no" : rollbox.value,
-        "branch" : branchbox.value,
-        "subsection" : subbox.value,
-        "domain_id" : domainidbox.value,
-        "password" : passbox.value
+        "name": namebox.value,
+        "roll_no": rollbox.value,
+        "branch": branchbox.value,
+        "subsection": subbox.value,
+        "domain_id": domainidbox.value,
+        "password": passbox.value
     }
     console.log(user)
     localStorage.removeItem('user');

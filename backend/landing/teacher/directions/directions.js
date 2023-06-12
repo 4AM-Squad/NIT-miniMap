@@ -1,5 +1,20 @@
 let latt = 29.947001, lngg = 76.816805;
 
+function loadGoogleMaps(url) {
+	const script = document.createElement('script');
+	script.src = url;
+	script.defer = true;
+	script.async = true;
+	document.head.appendChild(script);
+	console.log('Google Maps API loaded')
+}
+
+fetch('http://localhost:3000/apiurl')
+	.then(response => response.json())
+	.then(data => {
+		loadGoogleMaps(data.apiURL);
+	})
+
 function initMap() {
 	let directionsService = new google.maps.DirectionsService();
 	let directionsRenderer = new google.maps.DirectionsRenderer();
@@ -22,7 +37,6 @@ function initMap() {
 		function (position) {
 			latt = position.coords.latitude;
 			lngg = position.coords.longitude;
-			console.log(position.coords.latitude, position.coords.longitude);
 
 			directionsRenderer.setMap(map);
 			let origin = new google.maps.LatLng(latt, lngg);
@@ -34,7 +48,6 @@ function initMap() {
 				travelMode: 'WALKING'
 			}, function (response, status) {
 				if (status === 'OK') {
-					console.log(response);
 					directionsRenderer.setDirections(response);
 				} else {
 					window.alert('Directions request failed. Try Again');
@@ -49,10 +62,7 @@ function initMap() {
 					maximumAge: 0
 				}
 			)
-
 		});
-
-	// console.log(google.maps.geometry.spherical.computeDistanceBetween(origin, destination));
 }
 
 function onClickHandler(element) {
@@ -90,7 +100,6 @@ async function removeClass(element) {
 		.then(response => response.json())
 		.then(data => {
 			classid = data[0]._id;
-			console.log(classid);
 		})
 		.catch(err => console.log(err));
 
@@ -116,14 +125,12 @@ date.addEventListener('change', async () => {
 	let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	let dayName = daysOfWeek[dayNumber];
 	let time = date.value.split('T')[1].concat(':00');
-	console.log(dayName)
 
 	fetch(`http://localhost:3000/timetable/${dayName}`)
 		.then(response => response.json())
 		.then(data => {
 			data.forEach(cls => {
 				if (cls.start_time <= time && time <= cls.end_time) {
-					console.log(cls)
 					let place = cls.location
 					for (let i = 1; i < loc_select.childNodes.length; i += 2) {
 						if (loc_select.childNodes[i].value == place) {
@@ -177,7 +184,6 @@ addbtn.addEventListener('click', async () => {
 	currentDate.setSeconds(timeString.substr(6, 2));
 	currentDate.setTime(currentDate.getTime() + (55 * 60 * 1000));
 	let newTimeString = currentDate.toTimeString().substring(0, 8);
-	// console.log(newTimeString); // "12:55:00"
 
 	let sub, flag = true;
 	await fetch(`http://localhost:3000/timetable`)
@@ -204,7 +210,6 @@ addbtn.addEventListener('click', async () => {
 		"subsection": sub_select.value
 	}
 
-	console.log(myClass)
 	await fetch('http://localhost:3000/timetable/', {
 		method: 'POST',
 		body: JSON.stringify(myClass),

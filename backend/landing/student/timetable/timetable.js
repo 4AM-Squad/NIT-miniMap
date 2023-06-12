@@ -13,27 +13,35 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 let day = days[today.getDay()];
 const user = JSON.parse(localStorage.getItem('user'));
 
+function loadGoogleMaps(url) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.defer = true;
+    script.async = true;
+    document.head.appendChild(script);
+    console.log('Google Maps API loaded')
+}
+
+fetch('http://localhost:3000/apiurl')
+    .then(response => response.json())
+    .then(data => {
+        loadGoogleMaps(data.apiURL);
+    })
+
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 17,
+        zoom: 16,
         center: { lat: 29.946076, lng: 76.817682 },
         mapTypeId: 'satellite'
     });
 
-    map.setOptions({ minZoom: 16 });
-
     const image = {
-        url: "../marker.png",
-        // This marker is 20 pixels wide by 32 pixels high.
+        url: "marker.png",
         size: new google.maps.Size(20, 32),
-        // The origin for this image is (0, 0).
         origin: new google.maps.Point(0, 0),
-        // The anchor for this image is the base of the flagpole at (0, 32).
         anchor: new google.maps.Point(0, 32),
     };
-    // Shapes define the clickable region of the icon. The type defines an HTML
-    // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-    // The final coordinate closes the poly by connecting to the first coordinate.
+
     const shape = {
         coords: [1, 1, 1, 20, 18, 20, 18, 1],
         type: "poly",

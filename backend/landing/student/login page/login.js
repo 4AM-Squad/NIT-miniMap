@@ -20,7 +20,7 @@ btn.addEventListener('click', async (e) => {
                     localStorage.setItem('user', JSON.stringify(user));
                     window.location.href = '../student.html';
                 }
-                else{
+                else {
                     alert("Password is Incorrect");
                     return false
                 }

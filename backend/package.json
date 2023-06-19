@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "page": "open-cli ./index.html",
+    "start": "start http://localhost:3000/index.html & nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "dotenv": "^16.1.4",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "open-cli": "^7.2.0"
   }
 }

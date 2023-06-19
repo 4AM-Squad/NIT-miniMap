@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "page": "open-cli ./index.html",
+    "page": "run open-cli ./index.html",
     "start": "start http://localhost:3000/index.html & nodemon server.js"
   },
   "keywords": [],

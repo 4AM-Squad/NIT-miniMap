@@ -36,7 +36,7 @@ function initMap() {
     });
 
     const image = {
-        url: "marker.png",
+        url: '../marker.png',
         size: new google.maps.Size(20, 32),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 32),

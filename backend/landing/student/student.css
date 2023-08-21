@@ -34,7 +34,7 @@ body {
 
 .logo {
 	color: var(--color-white);
-	font-size: 4vh;
+	font-size: 30px;
 }
 
 .logo span {
@@ -63,7 +63,7 @@ body {
 }
 
 .menu-bar nav li a {
-	font-size: 3vh;
+	font-size: 20px;
 	color: var(--color-white);
 	text-decoration: none;
 	transition: all 0.3s;
